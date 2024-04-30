@@ -46,8 +46,9 @@
     flex-direction: row;
     align-items: center;
     background-color: #ffff;
-    padding: 2px 40px;
-    border-radius: 10px
+    padding: 0 40px;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
 .datos-calendario img{
@@ -72,9 +73,10 @@
     background-color: #65AEF2;
     font-family: "Inter", sans-serif;
     border-radius: 5px;
-    padding: 12px 10px;
+    padding: 11px 10px;
     color: #ffff;
     border: none;
     cursor: pointer;
-    
+    text-transform: uppercase;
+    font-weight:600;
 }
