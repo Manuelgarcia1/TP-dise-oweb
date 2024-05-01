@@ -5,13 +5,14 @@
   box-sizing: border-box;
 }
 
-header.header-area {
+.header-area {
 /*   background-image: url("assets/img/header.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover; */
   height: 600px;
   margin-bottom: 30px;
+  position: relative;
 }
 
 /* navbar regular css start */
@@ -103,17 +104,19 @@ header.header-area {
 .title-area {
   position: absolute;
   bottom: 0;
+  left: 0;
   width: 100%;
-  padding: 0 15px;
+  padding: 10px;
   box-sizing: border-box;
+  transition: bottom 0.3s;
 }
 
 .title-area h1 {
-  font-size: 2.5rem;
+  font-size: 2.9rem;
   font-weight: bold;
-  color: #262626;
+  color: #fff;
   margin: 0;
-  padding: 1rem 0;
+  padding: 1rem 15px;
   letter-spacing: 0.1rem;
 }
 /* intro-area css end */
@@ -176,10 +179,6 @@ header.header-area {
     max-height: 100vh;
     overflow: visible;
   }
-  .intro-area h2 {
-    font-size: 36px;
-    margin-bottom: 15px;
-  }  
   .logo-mobile{
     visibility: visible;
   }
@@ -188,6 +187,12 @@ header.header-area {
   }
   .background-image {
     height: 300px;
+  }
+  .header-title {
+    display: block;
+  }
+  .nav-toggler.toggler-open ~ .title-area .header-title {
+    display: none;
   }
 }
 /* mobile breakpoint end */

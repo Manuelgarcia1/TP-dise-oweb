@@ -18,6 +18,12 @@ function allEventListners() {
 function togglerClick() {
   navToggler.classList.toggle('toggler-open');
   navMenu.classList.toggle('open');
+
+  // Ocultar el título h1 cuando se abre el menú togle en dispositivos móviles
+  const headerTitle = document.querySelector('.header-title');
+    if (window.innerWidth <= 767) {
+      headerTitle.style.display = navMenu.classList.contains('open') ? 'none' : 'block';
+    }
 }
 
 // navLinkClick function
@@ -26,3 +32,4 @@ function navLinkClick() {
     navToggler.click();
   }
 }
+
