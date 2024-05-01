@@ -7,12 +7,13 @@ body {
     margin: 0;
     padding: 0;
 }
-
 .contenedor {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin: 5%;
+    margin: 4%;
+    margin-right:7%;
+    padding: 0%;
 }
 .imagen {
     margin-bottom: 4%;
@@ -20,13 +21,12 @@ body {
 /* Estilos para la imagen grande */
 
 .texto-sobre-imagen {
-    position: absolute;
-    top: 110%; /* Ajusta la posición vertical del texto */
-    left: 21.5%; /* Ajusta la posición horizontal del texto */
+    position: relative;
     background-color: rgba(255, 255, 255, 0.7); /* Fondo semitransparente */
-    padding: 1%;
+    margin: 20%;
     z-index: 1; /* Coloca el texto encima de la imagen */
 }
+
 .imagen.grande img {
     margin-left: 55%;
     width: 101%;
