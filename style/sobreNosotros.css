@@ -1,0 +1,24 @@
+.contenedor-sn {
+    display: flex;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.texto {
+    display: block;
+    margin-right: 5%;
+}
+
+.titulo-sn{
+    text-align: center;
+    font-size: 7rem;
+    margin-top: 2%;
+    padding: 0%;
+}
+
+.imagen-sn{
+    border-top-left-radius: 10%;
+    border-bottom-right-radius: 10%;
+    width: 60vh;
+    height: 70vh;
+}
