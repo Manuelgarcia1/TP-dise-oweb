@@ -402,7 +402,7 @@ a {
   flex-direction: row;
   align-items: center;
   background-color: #ffff;
-  padding: 0 40px;
+  padding: 10px 40px;
   border-radius: 10px;
   cursor: pointer;
 }
@@ -442,10 +442,9 @@ a {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-right: 50px;
-  margin-left: 50px;
   margin: 0 auto;
   width: 80%;
+  padding-bottom: 20px;
 }
 
 .texto h2{
@@ -473,6 +472,7 @@ a {
   justify-content: space-between;
   margin: 0 auto;
   width: 80%;
+  padding-bottom: 20px;
 }
 
 .card1{
@@ -482,6 +482,7 @@ a {
   border-radius: 20px;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 }
 
 .card1 img{
