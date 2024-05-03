@@ -1,17 +1,20 @@
-@import url(https://fonts.googleapis.com/css?family=Noto+Sans);
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
 .contact_form{	
 	width: 460px; 
-  height: auto;
-  margin: 80px auto;
+    height: auto;
+    margin: 80px auto;
 	border-radius: 10px;  
 	padding-top: 30px;
 	padding-bottom: 20px;  
-  background-color: #fbfbfb; 
-  padding-left: 30px; 
+    background-color: #fbfbfb; 
+    padding-left: 30px; 
 }
-
-
-input{
+.input-form-contacto{
 	background-color: #fbfbfb; 
 	width: 408px; 
 	height: 40px; 
@@ -21,10 +24,8 @@ input{
 	border-color: #ff0000; 
 	margin-top: 10px;  
 	padding-left: 10px;
-  margin-bottom: 20px; 
+  	margin-bottom: 20px; 
 }
-
-
 textarea{
   background-color: #fbfbfb; 
 	width: 405px; 
@@ -35,18 +36,14 @@ textarea{
 	border-color: #f30101; 
 	margin-top: 10px;  
 	padding-left: 10px;
-  margin-bottom: 20px; 
-  padding-top: 15px; 
+  	margin-bottom: 20px; 
+  	padding-top: 15px; 
 }
-
-
 label{
-  display: block; 
+    display: block; 
 	float: center; 	
 }
-
-
-button{
+.btn-form-contacto{
 	height: 45px; 
 	padding-left: 5px;
 	padding-right: 5px; 	
@@ -58,63 +55,41 @@ button{
 	border-style: solid; 
 	border-radius: 10px;	
 	width: 420px;   
-  cursor: pointer;
-}
-
-
-button p{
+    cursor: pointer;
 	color: #fff; 
 }
-
-
-span{
+.obligatorio{
 	color: #ff0000; 
 }
-
-
 .aviso{
 	font-size: 13px;  
 	color: #0e0e0e;  
 }
-
-
-h1{
+.title-contacto{
 	font-size: 39px;  
 	text-align: letf; 
 	padding-bottom: 20px; 
 	color: #c90f0f;
 }
-
-
-h3{
+.subtitle-contacto{
 	font-size: 16px; 
 	padding-bottom: 30px;
 	color: #0e0e0e;   
 }
-
-
-p{
+.label-contain{
 	font-size: 14px; 
 	color: #0e0e0e; 
 }
-
-
 ::-webkit-input-placeholder {
- color: #a8a8a8;
+ 	color: #a8a8a8;
 }
-
-
 ::-webkit-textarea-placeholder {
- color: #a8a8a8;
+ 	color: #a8a8a8;
 }
-
-
 .formulario input:focus{
 	outline:0;
 	border: 1px solid #97d848;
 }
-
-
 .formulario textarea:focus{
 	outline:0;
 	border: 1px solid #97d848;
