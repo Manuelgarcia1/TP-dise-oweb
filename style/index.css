@@ -223,54 +223,35 @@ body{
 
 /* CSS NAVBAR FIN */
 
-/* seccion opciones*/
+/*######################################################################## seccion opciones*/
 .cards-option{
     padding: 20px;
 }
-.titulo {
-    border: solid 1px red;
-}
-.contenedor {
+.contenedor-opciones {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin: 5%;
+    justify-content: space-around;
 }
-.imagen {
-    margin-bottom: 4%;
-}
-/* Estilos para la imagen grande */
-
-.texto-sobre-imagen {
-    position: absolute;
-    top: 110%; /* Ajusta la posición vertical del texto */
-    left: 21.5%; /* Ajusta la posición horizontal del texto */
-    background-color: rgba(255, 255, 255, 0.7); /* Fondo semitransparente */
-    padding: 1%;
-    z-index: 1; /* Coloca el texto encima de la imagen */
-}
-.imagen.grande img {
-    margin-left: 55%;
-    width: 101%;
+.imagen-grande img {
+    padding-left: 150PX;
+    width: 100%;
     height: auto;
 }
-
 /* Estilos para las imágenes pequeñas */
-.imagenes-pequenas {
+.contenedor-imagenes-pequenas {
     display: flex;
+    justify-content: space-around;
     flex-wrap: wrap;
-    width: 60%;
+    width: 45%;
 }
 
-.imagenes-pequenas .imagen {
-    width: 45%; /* Dos imágenes pequeñas por fila */
+.imagen-opciones {
+  margin-bottom: 4%;
 }
 
-.titulo-imagen {
-    width: 50%;
-    font-size: 40px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #fff;
+.texto-sobre-imagen {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.7); /* Fondo semitransparente */
+  z-index: 1; /* Coloca el texto encima de la imagen */
 }
 /* fin seccion opciones*/
 
