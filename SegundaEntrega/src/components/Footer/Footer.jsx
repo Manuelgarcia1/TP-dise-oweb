@@ -14,15 +14,15 @@ const Footer = () => {
         <div className="footer-logo">
           <img src="assets/logo/Logo.png" alt="logo" />
           <ul className="footer-nav">
-            <li className="footer-nav-link"><a href="#">About us</a></li>
+            <li className="footer-nav-link"><a href="#">Sobre Nosotros</a></li>
             <li className="footer-nav-link"><a href="#">FAQ</a></li>
-            <li className="footer-nav-link"><a href="#">Services & Facilities</a></li>
-            <li className="footer-nav-link"><a href="#">Contact</a></li>
-            <li className="footer-nav-link"><a href="#">Term of Use</a></li>
-            <li className="footer-nav-link"><a href="#">Careers</a></li>
-            <li className="footer-nav-link"><a href="#">Location</a></li>
-            <li className="footer-nav-link"><a href="#">Privacy Police</a></li>
-            <li className="footer-nav-link"><a href="#">How to Book</a></li>
+            <li className="footer-nav-link"><a href="#">Servicios y Facilidades</a></li>
+            <li className="footer-nav-link"><a href="#">Contactos</a></li>
+            <li className="footer-nav-link"><a href="#">Terminos de Uso</a></li>
+            <li className="footer-nav-link"><a href="#">Empleo</a></li>
+            <li className="footer-nav-link"><a href="#">Locacion</a></li>
+            <li className="footer-nav-link"><a href="#">Politicas de Privacidad</a></li>
+            <li className="footer-nav-link"><a href="#">Como reservar</a></li>
           </ul>
         </div>
       </div>
