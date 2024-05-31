@@ -1,14 +1,12 @@
 import React from 'react';
-import NavbarComponent from './components/navbar/NavbarComponent';
-
-import './App.css'
-
+import Card1 from './components/Card1/Card1'
+import Card2 from './components/Card2/Card2'
 function App() {
 
   return (
-    <div>
-      <NavbarComponent></NavbarComponent>
-    </div>
+    <>
+      
+    </>
   )
 }
 
