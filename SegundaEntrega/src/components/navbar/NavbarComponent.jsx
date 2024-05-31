@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import './NavbarComponent.css';
+import headerImg from '../../assets/img/header.jpg';
+import logo from '../../assets/logo/Logo.png';
+
 
 const HeaderComponent = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,12 +19,12 @@ const HeaderComponent = () => {
 
   return (
     <header className="header-area">
-      <img src="../../public/assets/imagenes/header.jpg" alt="" className="background-image" />
+      <img src={headerImg} alt="" className="background-image" />
       <div className="navbar-area">
         <div className="container-navbar cointainer-nav-mobile">
           <nav className="site-navbar">
             <figure className="logo-mobile">
-              <img src="../../public/assets/logo/Logo.png" alt="Logo de la web" />
+              <img src={logo} alt="Logo de la web" />
             </figure>
             <ul className={`nav-container-links ${isOpen ? 'open' : ''}`}>
               <li className="nav-link"><a href="#" onClick={navLinkClick}>Home</a></li>
@@ -29,7 +32,7 @@ const HeaderComponent = () => {
               <li className="nav-link"><a href="contacto.html" onClick={navLinkClick}>Contactanos</a></li>
               <li className="logo-desktop">
                 <figure>
-                  <img src="assets/logo/Logo.png" alt="Logo de la web" />
+                  <img src={logo} alt="Logo de la web" />
                 </figure>
               </li>
               <li className="nav-link"><a href="#" onClick={navLinkClick}>Iniciar Sesión</a></li>
