@@ -8,7 +8,7 @@ function App() {
 
   return (
     <React.Fragment>
-      <NavbarComponent></NavbarComponent>
+      <NavbarComponent/>
       <Card1/>
       <Card2/>
       <Footer/>
