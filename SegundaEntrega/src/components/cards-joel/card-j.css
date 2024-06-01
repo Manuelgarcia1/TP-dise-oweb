@@ -1,0 +1,129 @@
+.cards-option{
+}
+.contenedor-opciones {
+    display: flex;
+    justify-content: center;
+}
+.imagen-grande img {
+    width: 50vh;
+    height: 100vh;
+}
+.imagen-grande:hover {
+  transform: scale(1.02); /* Aumenta el tamaño de la imagen */
+  transition: transform 0.1s ease; /* Suaviza la transición */
+}
+
+/* Estilos para las imágenes pequeñas */
+.contenedor-imagenes-pequenas {
+  padding-left: 10vh;
+  width: 100vh;
+  height: 100vh;
+  display: flex;
+  align-content: space-between;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.imagen-opciones {
+  width: 45vh;
+  height: 45vh;
+  display: block;
+}
+
+.imagen-opciones:hover {
+  transform: scale(1.02); /* Aumenta el tamaño de la imagen */
+  transition: transform 0.1s ease; /* Suaviza la transición */
+}
+.contenedor-imagen-pequeña-individual {
+  width: 45vh;
+  height: 45vh;
+  display: block;
+  z-index: 114;
+  background-color: aqua;
+}
+
+.texto-sobre-imagen {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.7); /* Fondo semitransparente */
+  z-index: 2; /* Coloca el texto encima de la imagen */
+}
+
+
+
+/* MEDIA QUERYS Para pantallas grandes */
+@media (max-width: 1200px) {
+  .imagen-grande img {
+    width: 40vh;
+    height: 80vh;
+  }
+
+  .contenedor-imagenes-pequenas {
+    padding-left: 5vh;
+    width: 90vh;
+  }
+
+  .imagen-opciones {
+    width: 40vh;
+    height: 40vh;
+  }
+}
+
+/* Para pantallas medianas */
+@media (max-width: 992px) {
+  .imagen-grande img {
+    width: 35vh;
+    height: 70vh;
+  }
+
+  .contenedor-imagenes-pequenas {
+    padding-left: 3vh;
+    width: 80vh;
+  }
+
+  .imagen-opciones {
+    width: 35vh;
+    height: 35vh;
+  }
+}
+
+/* Para pantallas pequeñas */
+@media (max-width: 768px) {
+  .imagen-grande img {
+    width: 30vh;
+    height: 60vh;
+  }
+
+  .contenedor-imagenes-pequenas {
+    padding-left: 2vh;
+    width: 70vh;
+    flex-direction: column; /* Cambia a columna para adaptarse mejor a pantallas pequeñas */
+    align-items: center;
+  }
+
+  .imagen-opciones {
+    width: 30vh;
+    height: 30vh;
+    margin-bottom: 2vh; /* Añade espacio entre las imágenes */
+  }
+}
+
+/* Para pantallas extra pequeñas */
+@media (max-width: 576px) {
+  .imagen-grande img {
+    width: 25vh;
+    height: 50vh;
+  }
+
+  .contenedor-imagenes-pequenas {
+    padding-left: 1vh;
+    width: 60vh;
+    align-items: center;
+  }
+
+  .imagen-opciones {
+    width: 25vh;
+    height: 25vh;
+    margin-bottom: 1vh;
+  }
+}
