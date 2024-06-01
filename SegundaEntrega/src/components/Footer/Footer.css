@@ -76,3 +76,30 @@ footer {
     text-align: center;
     margin-top: 50px; 
 }
+
+@media (max-width: 768px){
+    footer{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contenedor-footer{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .newsletter{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .newsletter-input{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer-logo, .footer-nav{
+        display: flex;
+        flex-direction: column;    
+    }
+}

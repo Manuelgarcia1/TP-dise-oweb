@@ -3,6 +3,7 @@
     justify-content: center;
     font-size: 1.5rem;
     text-align: center;
+    padding: 35px 5px;
 }
 
 .imagen-grande {
@@ -56,7 +57,7 @@
   display: flex;
   align-content: space-between;
   justify-content: space-between;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
 }
 
@@ -64,6 +65,7 @@
   overflow: hidden;
   position: relative; 
   border-radius: 12%;
+  padding: 5px;
 }
 
 .contenedor-imagen-pequeña-individual:hover {
