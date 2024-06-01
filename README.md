@@ -55,6 +55,10 @@ Esta estrategia fomentará el desarrollo de nuestras habilidades de comunicació
 
 
 ## Instalación y configuración del proyecto ⚠️
+
+Es importante que ambos servidores tanto el frontend como el backend se esten ejecuetando al mismo tiempo.
+A continuacion les damos las instrucciones correspondientes.
+
 ### Frontend
 
 El trabajo con React se encuentra situad en la carpeta SegundaEntrega.
