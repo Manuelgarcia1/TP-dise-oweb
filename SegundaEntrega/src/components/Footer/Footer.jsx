@@ -1,4 +1,5 @@
 import './Footer.css';
+import logo from '../../assets/logo/Logo.png';
 
 const Footer = () => {
   return (
@@ -12,7 +13,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="footer-logo">
-          <img src="assets/logo/Logo.png" alt="logo" />
+          <img src={logo} alt="logo" />
           <ul className="footer-nav">
             <li className="footer-nav-link"><a href="#">Sobre Nosotros</a></li>
             <li className="footer-nav-link"><a href="#">FAQ</a></li>
