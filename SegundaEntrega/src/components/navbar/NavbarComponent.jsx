@@ -30,14 +30,13 @@ const NavbarComponent = () => {
             <ul className={`nav-container-links ${isOpen ? 'open' : ''}`}>
               <li className="nav-link"><Link to="/" onClick={navLinkClick}>Home</Link></li>
               <li className="nav-link"><Link to="/sobreNosotros" onClick={navLinkClick}>Sobre Nosotros</Link></li>
-              <li className="nav-link"><Link to="/contacto" onClick={navLinkClick}>Contactanos</Link></li>
               <li className="logo-desktop">
                 <figure>
                   <img src={logo} alt="Logo de la web" />
                 </figure>
               </li>
-              <li className="nav-link"><a href="#" onClick={navLinkClick}>Iniciar Sesión</a></li>
-              <li className="nav-link padding-li"><a href="#" onClick={navLinkClick}>Registrarse</a></li>
+              <li className="nav-link"><Link to="/contacto" onClick={navLinkClick}>Contactanos</Link></li>
+              <li className="nav-link"><Link to="/form-admin" onClick={navLinkClick}>Admin</Link></li>
             </ul>
             <button className="nav-toggler" onClick={toggleNavbar}>
               <span></span>
