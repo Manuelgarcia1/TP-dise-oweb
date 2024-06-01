@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import './form.css';
 
-export const AddAlojamiento = () => {
+const AddAlojamiento = () => {
   const [descripcion, setDescripcion] = useState('');
   const [tiposAlojamiento, setTiposAlojamiento] = useState([]);
   const [alojamientoEditando, setAlojamientoEditando] = useState(null);
@@ -136,3 +136,5 @@ export const AddAlojamiento = () => {
     </div>
   );
 };
+
+export default AddAlojamiento;
