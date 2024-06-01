@@ -1,90 +1,119 @@
 .contact_form{	
-	width: 460px; 
-    height: auto;
-    margin: 80px auto;
-	border-radius: 10px;  
-	padding-top: 30px;
-	padding-bottom: 20px;  
-    background-color: #fbfbfb; 
-    padding-left: 30px; 
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 30px 0;
 }
-.input-form-contacto{
-	background-color: #fbfbfb; 
-	width: 408px; 
-	height: 40px; 
-	border-radius: 5px;  
-	border-style: solid; 
-	border-width: 1px; 
-	border-color: #ff0000; 
-	margin-top: 10px;  
-	padding-left: 10px;
-  	margin-bottom: 20px; 
+
+.title-contacto, .subtitle-contacto{
+	padding: 15px 0;
+	text-align: center;
 }
-textarea{
-  background-color: #fbfbfb; 
-	width: 405px; 
-	height: 150px; 
-	border-radius: 5px;  
-	border-style: solid; 
-	border-width: 1px; 
-	border-color: #f30101; 
-	margin-top: 10px;  
-	padding-left: 10px;
-  	margin-bottom: 20px; 
-  	padding-top: 15px; 
-}
-label{
-    display: block; 
-	float: center; 	
-}
-.btn-form-contacto{
-	height: 45px; 
-	padding-left: 5px;
-	padding-right: 5px; 	
-	margin-bottom: 20px; 
-	margin-top: 10px; 	
-	text-transform: uppercase;
-	background-color: #e90202; 
-	border-color: #ff0101; 
-	border-style: solid; 
-	border-radius: 10px;	
-	width: 420px;   
-    cursor: pointer;
-	color: #fff; 
-}
-.obligatorio{
-	color: #ff0000; 
-}
-.aviso{
-	font-size: 13px;  
-	color: #0e0e0e;  
-}
+
 .title-contacto{
-	font-size: 39px;  
-	text-align: letf; 
-	padding-bottom: 20px; 
-	color: #c90f0f;
+	font-size: 1.8rem;
+	color: #587ec1;
 }
+
 .subtitle-contacto{
-	font-size: 16px; 
+	font-size: 1rem;
 	padding-bottom: 30px;
-	color: #0e0e0e;   
 }
+
+.formulario{
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+	background-color: #587fc14c;
+	border-radius: 20px;
+}
+
 .label-contain{
-	font-size: 14px; 
-	color: #0e0e0e; 
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
 }
-::-webkit-input-placeholder {
- 	color: #a8a8a8;
+
+.label-contain .label_input{
+	padding: 5px 0;
+	font-size: 0.90rem;
 }
-::-webkit-textarea-placeholder {
- 	color: #a8a8a8;
+
+.label-contain .label_input .obligatorio{
+	color: #c41d1d;
 }
-.formulario input:focus{
-	outline:0;
-	border: 1px solid #97d848;
+
+.label-contain input, textarea{
+	padding: 5px;
+	border-radius: 5px;
+	border: none;
 }
-.formulario textarea:focus{
-	outline:0;
-	border: 1px solid #97d848;
+
+.label-contain textarea{
+  	height: 150px; 
+	resize: none;
+}
+
+.btn-enviar{
+	margin: 20px 0;
+	padding: 5px;
+	font-weight: 600;
+	font-size: 1rem;
+	text-align: center;
+	background-color: rgb(6, 6, 69);
+	color: #fff;
+	border-radius: 5px;
+	border: none;
+	cursor: pointer;
+	width: 150px;
+	height: 40px;
+}
+
+.btn-contain{
+	align-items: center;
+}
+
+.label-contain .aviso{
+	font-size: 0.90rem;
+}
+.label-contain .aviso .obligatorio{
+	color: #c41d1d;
+	padding-right: 5px;
+}
+
+@media (min-width: 767px) {
+	.formulario{
+		max-width: 70%;
+	}
+
+	.label-contain .label_input{
+		font-size: 1rem;
+	}
+
+	.label-contain input, textarea{
+		padding: 15px 10px;
+	}
+
+	.btn-enviar{
+		width: 400px;
+	}
+}
+
+@media (min-width: 1440px){
+	.title-contacto{
+		font-size: 2.5rem;
+	}
+	
+	.subtitle-contacto{
+		font-size: 1.5rem;
+	}
+
+	.label-contain .label_input{
+		font-size: 1.3rem;
+	}
+
+	.btn-enviar{
+		font-size: 1.2rem;
+	}
 }

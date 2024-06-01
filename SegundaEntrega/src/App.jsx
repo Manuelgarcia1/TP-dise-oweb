@@ -1,20 +1,21 @@
 import React from 'react';
-import Card1 from './components/Card1/Card1'
-import Card2 from './components/Card2/Card2'
-import NavbarComponent from './components/navbar/NavbarComponent'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import NavbarComponent from './components/navbar/NavbarComponent';
+import Footer from './components/Footer/Footer';
+import Home from './components/Home/Home';
+import FormularioContacto from './components/contacto/contacto';
 
-import Footer from './components/Footer/Footer'
 function App() {
-
   return (
-    <React.Fragment>
-      <NavbarComponent/>
-      <Card1/>
-      <Card2/>
-      <Footer/>
-    </React.Fragment>
-  )
+    <Router>
+      <NavbarComponent />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/contacto" element={<FormularioContacto />} />
+      </Routes>
+     
+    </Router>
+  );
 }
 
-
-export default App
+export default App;
