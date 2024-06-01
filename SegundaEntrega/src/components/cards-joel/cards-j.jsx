@@ -12,20 +12,25 @@ const CardJ = () => {
         <section className="cards-option">
             <div className="contenedor-opciones">
                 <div className="imagen-grande">
-                    <img src={imagenGrande} alt="Imagen grande" />
+                    <img className="imagen-grande-img" src={imagenGrande} alt="Imagen grande" />
+                    <div className="centrado-grande"><p>Conoce todo lo que tenemos para brindarte</p></div>
                 </div>
                 <div className="contenedor-imagenes-pequenas">
                     <div className='contenedor-imagen-pequeña-individual'>
-                        <img className="imagen-opciones" src={imagen1} alt="Imagen 4" />
+                        <img className="imagen-pequeña" src={imagen1} alt="Imagen 4" />
+                        <div className="centrado"><p>Conoce todo lo que tenemos para brindarte</p></div>  
                     </div>
                     <div className='contenedor-imagen-pequeña-individual'>
-                        <img className="imagen-opciones" src={imagen2} alt="Imagen 2" />
+                        <img className="imagen-pequeña" src={imagen2} alt="Imagen 2" />
+                        <div className="centrado"><p>Conoce todo lo que tenemos para brindarte</p></div>
                     </div>
                     <div className='contenedor-imagen-pequeña-individual'>
-                        <img className="imagen-opciones" src={imagen3} alt="Imagen 3" />
+                        <img className="imagen-pequeña" src={imagen3} alt="Imagen 3" />
+                        <div className="centrado"><p>Conoce todo lo que tenemos para brindarte</p></div>
                     </div>
                     <div className='contenedor-imagen-pequeña-individual'>
-                        <img className="imagen-opciones" src={imagen4} alt="Imagen 4" />
+                        <img className="imagen-pequeña" src={imagen4} alt="Imagen 4" />
+                        <div className="centrado"><p>Conoce todo lo que tenemos para brindarte</p></div>
                     </div>
                 </div>
             </div>
