@@ -4,7 +4,7 @@ import headerImg from '../../assets/img/header.jpg';
 import logo from '../../assets/logo/Logo.png';
 
 
-const HeaderComponent = () => {
+const NavbarComponent = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleNavbar = () => {
@@ -51,4 +51,4 @@ const HeaderComponent = () => {
   );
 };
 
-export default HeaderComponent;
+export default NavbarComponent;
