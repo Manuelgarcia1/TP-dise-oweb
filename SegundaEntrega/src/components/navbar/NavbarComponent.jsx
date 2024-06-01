@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './NavbarComponent.css';
 import headerImg from '../../assets/img/header.jpg';
 import logo from '../../assets/logo/Logo.png';
 
 
-const HeaderComponent = () => {
+const NavbarComponent = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleNavbar = () => {
@@ -27,9 +28,9 @@ const HeaderComponent = () => {
               <img src={logo} alt="Logo de la web" />
             </figure>
             <ul className={`nav-container-links ${isOpen ? 'open' : ''}`}>
-              <li className="nav-link"><a href="#" onClick={navLinkClick}>Home</a></li>
-              <li className="nav-link"><a href="sobreNosotros.html" onClick={navLinkClick}>Sobre Nosotros</a></li>
-              <li className="nav-link"><a href="contacto.html" onClick={navLinkClick}>Contactanos</a></li>
+              <li className="nav-link"><Link to="/" onClick={navLinkClick}>Home</Link></li>
+              <li className="nav-link"><Link to="/sobreNosotros" onClick={navLinkClick}>Sobre Nosotros</Link></li>
+              <li className="nav-link"><Link to="/contacto" onClick={navLinkClick}>Contactanos</Link></li>
               <li className="logo-desktop">
                 <figure>
                   <img src={logo} alt="Logo de la web" />
@@ -51,4 +52,4 @@ const HeaderComponent = () => {
   );
 };
 
-export default HeaderComponent;
+export default NavbarComponent;
