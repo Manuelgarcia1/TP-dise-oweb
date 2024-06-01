@@ -63,42 +63,34 @@ Esta estrategia fomentará el desarrollo de nuestras habilidades de comunicació
 
 El trabajo con React se encuentra situado en la carpeta SegundaEntrega.
 Para levantar el servidor y poder visualizar la aplicacion es necesario que se situe en la carpeta SegundaEntrega mediante la terminal e ingresar el comando:
-´´
-npm install
 
-´´
+```npm install```
+
 Seguido del comando:
 
-´´
-npm i
+```npm i```
 
-´´
 Este comando instalara las depedencias necesarias.
 Para correr el proyecto en local se utilizara el comando: 
-´´
-npm run dev
 
-´´
+```npm run dev```
+
 
 
 ### Backend
 La api proporcionada por los profesores se encuentra dentro de la carpeta Backend.
 Para levantar el servidor y poder visualizar la url del formulario realizado con la api en la aplicacion de react debera mediante la terminal en la carpeta Backend e ingresar el comando:
-´´
-npm install
 
-´´
+```npm install```
+
+
 Seguido del comando:
 
-´´
-npm i
+```npm i```
 
-´´
 Este comando instalara las depedencias necesarias.
 Para correr el proyecto en local se utilizara el comando: 
-´´
-npm run dev
 
-´´
+```npm run dev```
 
 
