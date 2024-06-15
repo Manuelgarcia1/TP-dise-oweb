@@ -10,7 +10,10 @@
   flex-direction: column;
   align-items: center; 
 }
-
+.centrado {
+  display: flex;
+  justify-content: center;
+}
 .contenedorAddAlojamientos h2 {
   color: #333;
 }

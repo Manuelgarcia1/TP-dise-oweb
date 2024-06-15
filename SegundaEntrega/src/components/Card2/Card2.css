@@ -46,10 +46,37 @@ body{
     width: 80%;
     padding-bottom: 20px;
   }
-  
+  .buscadores {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width: 80%;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.buscadores select, .buscadores input, .buscadores button {
+    margin: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.buscadores button {
+    background-color: #65AEF2;
+    color: #fff;
+    cursor: pointer;
+}
   .card1{
     width: 330px;
-    height: 450px;
+    height: 550px;
     background-color: #ffff;
     border-radius: 20px;
     display: flex;
