@@ -32,19 +32,12 @@ CREATE TABLE `alojamientos` (
   `CantidadDormitorios` int NOT NULL,
   `CantidadBanios` int NOT NULL,
   `Estado` enum('Disponible','Reservado') NOT NULL,
-  `TipoAlojamiento` int DEFAULT NULL,
-  PRIMARY KEY (`idAlojamiento`)
+  `idTipoAlojamiento` int DEFAULT NULL,
+  PRIMARY KEY (`idAlojamiento`),
+  KEY `idTipoAlojamiento` (`idTipoAlojamiento`),
+  CONSTRAINT `alojamientos_ibfk_1` FOREIGN KEY (`idTipoAlojamiento`) REFERENCES `tiposalojamiento` (`idTipoAlojamiento`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `alojamientos`
---
-
-LOCK TABLES `alojamientos` WRITE;
-/*!40000 ALTER TABLE `alojamientos` DISABLE KEYS */;
-/*!40000 ALTER TABLE `alojamientos` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -55,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-28 11:11:47
+-- Dump completed on 2024-06-05 23:27:09

@@ -35,3 +35,12 @@
   align-items: center;
   flex-direction: column;
 }
+@media (max-width: 768px) {
+  .contenedor-sn {
+    display: flex;
+    padding-left: 10%;
+    padding-right: 10%;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+  }
+}

@@ -61,8 +61,8 @@ A continuacion les damos las instrucciones correspondientes.
 
 ### Frontend
 
-El trabajo con React se encuentra situad en la carpeta SegundaEntrega.
-Para levantar el servidor y poder visualizar la aplicacion es necesario que se situe en la carpeta SegundaEntrega mediante la terminal e ingresar el comando
+El trabajo con React se encuentra situado en la carpeta SegundaEntrega.
+Para levantar el servidor y poder visualizar la aplicacion es necesario que se situe en la carpeta SegundaEntrega mediante la terminal e ingresar el comando:
 
 ```npm install```
 
@@ -74,6 +74,7 @@ Este comando instalara las depedencias necesarias.
 Para correr el proyecto en local se utilizara el comando: 
 
 ```npm run dev```
+
 
 
 ### Backend
