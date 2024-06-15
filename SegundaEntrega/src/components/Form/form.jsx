@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import './form.css';
-import Promociones from '../Card2/Card2.jsx';
 
 const AddAlojamiento = () => { 
   const [titulo, setTitulo] = useState('');

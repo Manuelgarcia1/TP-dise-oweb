@@ -1,13 +1,17 @@
-import React, { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import './NavbarComponent.css';
 import headerImg from '../../assets/img/header.jpg';
 import logo from '../../assets/logo/Logo.png';
-
+import { AuthContext } from '../../components/Form/AuthContext';
 
 const NavbarComponent = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { isAuthenticated, setIsAuthenticated, username } = useContext(AuthContext);
 
+  const handleLogout = () => {
+    setIsAuthenticated(false);
+  };
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
   };
@@ -17,6 +21,9 @@ const NavbarComponent = () => {
       toggleNavbar();
     }
   };
+
+  // Obtén la parte del nombre de usuario antes del arroba
+  const usernameBeforeAt = username.split('@')[0];
 
   return (
     <header className="header-area">
@@ -36,7 +43,20 @@ const NavbarComponent = () => {
                 </figure>
               </li>
               <li className="nav-link"><Link to="/contacto" onClick={navLinkClick}>Contactanos</Link></li>
-              <li className="nav-link"><Link to="/form-admin" onClick={navLinkClick}>Admin</Link></li>
+              <li className="nav-link">
+                <Link to={isAuthenticated ? "/addAlojamiento" : "/seguridad"} onClick={navLinkClick}>
+                  Admin
+                </Link>
+              </li>
+              <ul className={`nav-container-links ${isOpen ? 'open' : ''}`}>
+
+                {isAuthenticated && (
+                  <div className="logout-area" style={{ display: 'block' }}>
+                    <span style={{ display: 'block' }}>Bienvenido, {usernameBeforeAt}</span>
+                    <button style={{ display: 'block' }} onClick={handleLogout}>Salir</button>
+                  </div>
+                )}
+              </ul>
             </ul>
             <button className="nav-toggler" onClick={toggleNavbar}>
               <span></span>
