@@ -13,7 +13,7 @@ function App() {
       <NavbarComponent />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/contacto" element={<FormularioContacto />} />
+        <Route path="/contacto" element={<DetalleAlojamiento />} />
         <Route path="/sobreNosotros" element={< SobreNosotros/>} />
         <Route path="/form-admin" element={< AddAlojamiento/>} />
         <Route path="/detalle/:id" element={<DetalleAlojamiento />} /> {/* Ruta para DetalleAlojamiento */}
