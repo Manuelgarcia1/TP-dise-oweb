@@ -33,15 +33,6 @@ CREATE TABLE `alojamientoservicios` (
   CONSTRAINT `alojamientoservicios_ibfk_2` FOREIGN KEY (`idServicio`) REFERENCES `servicios` (`idServicio`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `alojamientoservicios`
---
-
-LOCK TABLES `alojamientoservicios` WRITE;
-/*!40000 ALTER TABLE `alojamientoservicios` DISABLE KEYS */;
-/*!40000 ALTER TABLE `alojamientoservicios` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -52,4 +43,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-28 11:11:47
+-- Dump completed on 2024-06-05 23:27:09
