@@ -21,8 +21,6 @@ const NavbarComponent = () => {
       toggleNavbar();
     }
   };
-
-  // Obtén la parte del nombre de usuario antes del arroba
   const usernameBeforeAt = username.split('@')[0];
 
   return (

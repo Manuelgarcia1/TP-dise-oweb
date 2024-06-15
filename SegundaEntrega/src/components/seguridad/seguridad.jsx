@@ -7,7 +7,7 @@ const Login = () => {
   const [correo, setCorreo] = useState('');
   const [contrasena, setContrasena] = useState('');
   const navigate = useNavigate(); 
-  const { setIsAuthenticated, setUsername } = useContext(AuthContext); // Mover esta línea aquí
+  const { setIsAuthenticated, setUsername } = useContext(AuthContext);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
