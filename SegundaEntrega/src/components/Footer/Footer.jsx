@@ -8,24 +8,20 @@ const Footer = () => {
         <div className="newsletter">
           <label className="newsletter-label" htmlFor="email">Newsletter & Special Promo</label><br />
           <div className="newsletter-input">
-            <input className="input-newsletter" type="email" id="email" placeholder="Enter your email here" />
-            <button className="button">Subscribe</button>
+            <input className="input-newsletter" type="email" id="email" placeholder="Ingrese su email" />
+            <button className="button">Subscríbete</button>
           </div>
         </div>
-        <div className="footer-logo">
+        <figure className='logo-container'>
           <img src={logo} alt="logo" />
+        </figure>
+        <div className="footer-nav-container">         
           <ul className="footer-nav">
-            <li className="footer-nav-link"><a href="#">Sobre Nosotros</a></li>
-            <li className="footer-nav-link"><a href="#">FAQ</a></li>
-            <li className="footer-nav-link"><a href="#">Servicios y Facilidades</a></li>
-            <li className="footer-nav-link"><a href="#">Contactos</a></li>
-            <li className="footer-nav-link"><a href="#">Terminos de Uso</a></li>
-            <li className="footer-nav-link"><a href="#">Empleo</a></li>
-            <li className="footer-nav-link"><a href="#">Locacion</a></li>
-            <li className="footer-nav-link"><a href="#">Politicas de Privacidad</a></li>
-            <li className="footer-nav-link"><a href="#">Como reservar</a></li>
+            <li className="footer-nav-link"><a href="#">Sobre Nosotros</a></li>         
+            <li className="footer-nav-link"><a href="#">Alojamientos</a></li>
+            <li className="footer-nav-link"><a href="#">Contáctanos</a></li>
           </ul>
-        </div>
+        </div>                                                  
       </div>
       <div className="creditos">
         <p className="copyright-footer">© Copyright Dream Voyages. All right reserved.</p>

@@ -6,9 +6,7 @@ import CardJ from '../cards-joel/cards-j'
 const Home = () => {
   return (
     <div>
-      <Card1 />
-      <Card2 />
-      <CardJ />
+    
     </div>
   );
 };
