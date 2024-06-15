@@ -11,25 +11,31 @@ footer {
 }
 .newsletter{
     padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 .newsletter-input {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    gap: 10px;
 }
-.newsletter-input .newsletter-label {
-    margin-right: 10px;
+.newsletter .newsletter-label {
+    font-size: 1.2rem;
+    padding: 10px;
 }
 .newsletter-input .input-newsletter {
-    padding: 5px;
+    padding: 10px;
     border-radius: 5px;
 }
 .newsletter-input .button {
-    padding: 5px 10px;
+    padding: 10px;
     background-color: #007bff;
     color: white;
     border: none;
     cursor: pointer;
     border-radius: 5px;
+    font-size: 1rem;
 }
 .newsletter-input .button:hover{
     background-color: midnightblue;
@@ -38,12 +44,11 @@ footer {
 
 .logo-container{
     padding: 20px 5px;
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
 }
-.logo-container{
+.logo-container img{
    width: 100%;
-   height: auto;
 }
 
 .newsletter img {
@@ -55,15 +60,22 @@ footer {
 .footer-nav{
     display: flex;
     flex-direction: column;    
-    align-items: center;
-    gap: 10px;
+    align-items: end;
+    gap: 20px;
     list-style: none;
     padding: 20px;
 }
 .footer-nav-link a {
+    font-size: 1.2rem;
     text-decoration: none; 
     color: white;
 }
+.footer-nav-link a:hover{
+    cursor: pointer;
+    color: #007bff;
+    text-decoration: underline;
+}
+
 .creditos{
     padding: 30px;
     text-align: center;  

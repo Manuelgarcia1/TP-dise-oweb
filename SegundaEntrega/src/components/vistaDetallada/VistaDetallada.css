@@ -1,0 +1,62 @@
+/* HotelDetail.css */
+.hotel-detail {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .hotel-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .hotel-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .hotel-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .hotel-info {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .hotel-description {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .hotel-bedrooms,
+  .hotel-bathrooms {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+  }
+  
+  .hotel-services h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+  
+  .hotel-services ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .hotel-services li {
+    background: #e0f7fa;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+  }

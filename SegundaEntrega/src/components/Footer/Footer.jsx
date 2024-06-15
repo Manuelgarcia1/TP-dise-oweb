@@ -6,7 +6,7 @@ const Footer = () => {
     <footer>
       <div className="contenedor-footer">
         <div className="newsletter">
-          <label className="newsletter-label" htmlFor="email">Newsletter & Special Promo</label><br />
+          <label className="newsletter-label" htmlFor="email">Newsletter & Special Promo</label>
           <div className="newsletter-input">
             <input className="input-newsletter" type="email" id="email" placeholder="Ingrese su email" />
             <button className="button">Subscríbete</button>

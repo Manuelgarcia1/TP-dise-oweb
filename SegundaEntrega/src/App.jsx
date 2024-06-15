@@ -5,6 +5,7 @@ import Home from './components/Home/Home';
 import FormularioContacto from './components/contacto/contacto';
 import SobreNosotros from './components/SobreNosotros/SobreNosotros';
 import AddAlojamiento from './components/Form/form';
+import DetalleAlojamiento from './components/vistaDetallada/VistaDetallada';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/contacto" element={<FormularioContacto />} />
         <Route path="/sobreNosotros" element={< SobreNosotros/>} />
         <Route path="/form-admin" element={< AddAlojamiento/>} />
+        <Route path="/detalle/:id" element={<DetalleAlojamiento />} /> {/* Ruta para DetalleAlojamiento */}
       </Routes>
       <Footer />
     </Router>
