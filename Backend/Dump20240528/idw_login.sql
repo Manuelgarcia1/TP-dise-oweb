@@ -39,3 +39,7 @@ CREATE TABLE `Usuarios` (
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2024-06-05 23:27:09
+
+-- Inserting data
+INSERT INTO `Usuarios` (`correo`, `contrasena`) VALUES ('ignac1997nacho@gmail.com', '1234');
+INSERT INTO `Usuarios` (`correo`, `contrasena`) VALUES ('joelChassman@gmail.com', '1999');
