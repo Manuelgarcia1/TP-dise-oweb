@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './seguridad.css';
 import { AuthContext } from '../../components/Form/AuthContext';
@@ -7,7 +7,14 @@ const Login = () => {
   const [correo, setCorreo] = useState('');
   const [contrasena, setContrasena] = useState('');
   const navigate = useNavigate(); 
-  const { setIsAuthenticated, setUsername } = useContext(AuthContext);
+  const { setIsAuthenticated, setUsername ,setIsRegistrado} = useContext(AuthContext);
+
+  useEffect(() => {
+    const isRegistrado = localStorage.getItem('isRegistrado');
+    if (isRegistrado === "1") { 
+      setIsRegistrado("1");
+    }
+  }, []);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -26,11 +33,15 @@ const Login = () => {
       alert(data.message);
       setIsAuthenticated(true);
       setUsername(correo);
+      setIsRegistrado("1");
+      localStorage.setItem('isAuthenticated', true);
+      localStorage.setItem('username', correo);
       navigate('/addAlojamiento'); 
     } else {
       alert(data.message);
     }
   };
+
 
   return (
     <div className="login-container">

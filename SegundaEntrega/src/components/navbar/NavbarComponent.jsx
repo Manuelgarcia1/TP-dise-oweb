@@ -1,5 +1,5 @@
 import { useState, useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 import './NavbarComponent.css';
 import headerImg from '../../assets/img/header.jpg';
 import logo from '../../assets/logo/Logo.png';
@@ -7,10 +7,17 @@ import { AuthContext } from '../../components/Form/AuthContext';
 
 const NavbarComponent = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { isAuthenticated, setIsAuthenticated, username } = useContext(AuthContext);
+  const { isAuthenticated, setIsAuthenticated, setIsRegistrado,username } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleLogout = () => {
+    localStorage.setItem('username',0);
+  localStorage.clear(username);
     setIsAuthenticated(false);
+    setIsRegistrado(0); 
+    
+  navigate('/seguridad');
+
   };
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
