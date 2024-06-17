@@ -54,6 +54,105 @@
 }
 
 .description-contain{
-  padding: 20px 10px;
+  padding: 30px 10px;
   font-size: 0.95rem;
+  position: relative;
+}
+.description-contain::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 90%; /* Grosor de la línea */
+  height: 1px; /* Altura de la línea */
+  background-color: #B5B2B3; /* Color de la línea */
+}
+
+.disponibilidad-container {
+  padding: 30px 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+.disponibilidad-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 90%; /* Grosor de la línea */
+  height: 1px; /* Altura de la línea */
+  background-color: #B5B2B3; /* Color de la línea */
+}
+
+.disponibilidad-container img{
+  width: 20px;
+  height: 20px;
+}
+
+.servicios-container{
+  padding: 30px 10px;
+  position: relative;
+}
+.servicios-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 90%; /* Grosor de la línea */
+  height: 1px; /* Altura de la línea */
+  background-color: #B5B2B3; /* Color de la línea */
+}
+.service-list{
+  padding: 30px 10px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.service-item{
+  font-weight: 600;
+}
+
+.info-container{
+  padding: 30px 10px;
+  position: relative;
+}
+.info-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 90%; /* Grosor de la línea */
+  height: 1px; /* Altura de la línea */
+  background-color: #B5B2B3; /* Color de la línea */
+}
+.normas-container, .politica-container{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px 5px;
+  position: relative;
+}
+.politica-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 90%; /* Grosor de la línea */
+  height: 1px; /* Altura de la línea */
+  background-color: #B5B2B3; /* Color de la línea */
+}
+
+.precio-container{
+  padding: 40px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 10px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #B5B2B3;
+}
+.precio-detail-container{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
