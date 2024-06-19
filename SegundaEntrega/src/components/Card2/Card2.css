@@ -76,7 +76,7 @@ body{
 }
   .card1{
     width: 330px;
-    height: 550px;
+    overflow: auto;
     background-color: #ffff;
     border-radius: 20px;
     display: flex;
@@ -118,9 +118,26 @@ body{
     margin: 10px;
     font-family:"Inter", sans-serif; 
   }
-  
+  .grid-servicios {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .grid-servicios li {
+    list-style-type: none;
+  }
   .card-precio .precio{
     font-weight: 800;
     font-size: 25px;
     
+  }
+  .card1 ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .card1 ul li {
+    margin-right: auto;
+  margin-left: auto;
   }

@@ -876,3 +876,4 @@ const AddAlojamiento = () => {
 };
 
 export default AddAlojamiento;
+ 
