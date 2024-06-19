@@ -76,6 +76,9 @@ const DetalleAlojamiento = () => {
           <div className='buton-container'>
             <button className='btn-reservar'>Reservar</button>
           </div>
+          <div className='contain-reserva-web'>
+
+          </div>
         </div>
       </div>
     </div>

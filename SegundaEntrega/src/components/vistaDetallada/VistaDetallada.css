@@ -221,7 +221,56 @@
      height: 500px;
   }
 
+  .details-contain{
+    padding: 25px;
+  }
   .details-contain h2{
     font-size: 2.3rem;
+  }
+  .tipo-alojamiento{
+    font-size: 1.3rem;
+  }
+
+  .contain-details{
+    padding: 15px 5px;
+  }
+  .contain-detail{
+    font-size: 1rem;
+  }
+
+  .description-contain{
+    padding: 25px;
+    font-size: 1.2rem;
+  }
+
+  .tex-contain{
+    font-size: 1rem;
+    gap: 10px;
+    align-items: center;
+  }
+  .tex-contain img{
+    width: 50px;
+    height: 50px;
+  }
+
+  .disponibilidad-container{
+    padding: 25px;
+    align-items: center;
+    gap: 10px;
+  }
+  .disponibilidad-container img{
+    width: 50px;
+    height: 50px;
+  }
+  .disponibilidad-container span{
+    font-size: 1.2rem;
+  }
+
+  .box-container{
+    padding: 25px;
+  }
+
+  .precio-container{
+    width: 400px;
   }
 }
