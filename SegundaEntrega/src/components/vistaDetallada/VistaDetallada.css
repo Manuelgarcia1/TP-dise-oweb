@@ -222,7 +222,7 @@
   }
 
   .details-contain{
-    padding: 25px;
+    padding: 25px 40px;
   }
   .details-contain h2{
     font-size: 2.3rem;
@@ -233,13 +233,14 @@
 
   .contain-details{
     padding: 15px 5px;
+    gap: 100px;
   }
   .contain-detail{
     font-size: 1rem;
   }
 
   .description-contain{
-    padding: 25px;
+    padding: 25px 40px;
     font-size: 1.2rem;
   }
 
@@ -254,7 +255,7 @@
   }
 
   .disponibilidad-container{
-    padding: 25px;
+    padding: 25px 40px;
     align-items: center;
     gap: 10px;
   }

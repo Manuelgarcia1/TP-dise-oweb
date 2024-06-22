@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import './Card2.css';
+import { Link } from 'react-router-dom';
 
 const Promociones = () => {
+  const [cargando, setCargando] = useState(true);
   const [alojamientos, setAlojamientos] = useState([]);
   const [imagenes, setImagenes] = useState([]);
   const [tiposAlojamiento, setTiposAlojamiento] = useState([]);
@@ -98,7 +100,7 @@ const Promociones = () => {
       </div>
       </div>
       
-      <div className="cards">
+{/*      <div className="cards">
         {alojamientosFiltrados.map((alojamiento, index) => {
           const alojamientoImagenes = imagenes.filter(imagen => imagen.idAlojamiento === alojamiento.idAlojamiento);
           const tipoAlojamiento = tiposAlojamiento.find(tipo => tipo.idTipoAlojamiento === alojamiento.idTipoAlojamiento);
@@ -122,7 +124,34 @@ const Promociones = () => {
             </div>
           );
         })}
-      </div>
+      </div>  */}
+       <div className="cards">
+        {alojamientosFiltrados.map((alojamiento, index) => {
+          const alojamientoImagenes = imagenes.filter(imagen => imagen.idAlojamiento === alojamiento.idAlojamiento);
+          const tipoAlojamiento = tiposAlojamiento.find(tipo => tipo.idTipoAlojamiento === alojamiento.idTipoAlojamiento);
+
+          return (
+            <Link to={`/detalleAlojamiento/${alojamiento.idAlojamiento}`} key={index}>
+              <div className="card1">
+                {alojamientoImagenes.map((imagen, imgIndex) => (
+                  <img key={imgIndex} src={imagen.RutaArchivo} alt={`Imagen de ${alojamiento.Titulo}`} />
+                ))}
+                <h2>{alojamiento.Titulo}</h2>
+                <h3>{alojamiento.Descripcion}</h3>
+                <h4>{alojamiento.PrecioPorDia}</h4>
+                <h4>estado: {alojamiento.Estado}</h4>
+                <h4>dormitorios: {alojamiento.CantidadDormitorios}</h4>
+                <h4>baños: {alojamiento.CantidadBanios}</h4>
+                <h4>tipo de alojamiento: {tipoAlojamiento ? tipoAlojamiento.Descripcion : 'Tipo de alojamiento no disponible'}</h4>
+                <div className="card-precio">
+                  <span className="precio">{alojamiento.PrecioPorDia}</span>
+                  <span className="texto-precio">/noche</span>
+                </div>
+              </div>
+            </Link>
+          );
+        })}
+      </div> 
     </div>
   );
 };
