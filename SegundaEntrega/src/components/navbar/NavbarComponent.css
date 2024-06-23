@@ -44,12 +44,12 @@
       color: #65AEF2;
       transform: translateY(-5px);
   }
-  .logo-desktop{
-      visibility: visible;
-  }
-  .logo-mobile{
-      visibility: hidden;
-  }
+  .logo-desktop {
+    display: block;
+}
+  .logo-mobile {
+    display: none;
+}
   .padding-li{
       padding-right: 50px;
   }
@@ -167,12 +167,12 @@
         max-height: 100vh;
         overflow: visible;
       }
-      .logo-mobile{
-        visibility: visible;
-      }
-      .logo-desktop{
-        visibility: none;
-      }
+      .logo-mobile {
+        display: block;
+    }
+    .logo-desktop {
+        display: none;
+    }
       .background-image {
         height: 300px;
       }

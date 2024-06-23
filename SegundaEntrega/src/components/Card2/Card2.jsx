@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import './Card2.css';
+import { Link } from 'react-router-dom';
 
 const Promociones = () => {
+  const [cargando, setCargando] = useState(true);
   const [alojamientos, setAlojamientos] = useState([]);
   const [imagenes, setImagenes] = useState([]);
   const [tiposAlojamiento, setTiposAlojamiento] = useState([]);
@@ -117,7 +119,6 @@ const Promociones = () => {
           </select>
         </div>
       </div>
-
       <div className="cards">
         {alojamientosFiltrados.map((alojamiento, index) => {
           const alojamientoImagenes = imagenes.filter(imagen => imagen.idAlojamiento === alojamiento.idAlojamiento);
@@ -143,10 +144,10 @@ const Promociones = () => {
               <h4>tipo de alojamiento: {tipoAlojamiento ? tipoAlojamiento.Descripcion : 'Tipo de alojamiento no disponible'}</h4>
               <h4>Servicios:</h4>
               <ul className="grid-servicios">
-  {alojamientoServicios.map((servicio, srvIndex) => (
-    <li key={srvIndex}>{servicio.replace(/^\./, ' ')}</li>
-  ))}
-</ul>
+                {alojamientoServicios.map((servicio, srvIndex) => (
+                  <li key={srvIndex}>{servicio.replace(/^\./, ' ')}</li>
+                ))}
+              </ul>
               <div className="card-precio">
                 <span className="precio">{alojamiento.PrecioPorDia}</span>
                 <span className="texto-precio">/noche</span>
@@ -155,6 +156,45 @@ const Promociones = () => {
           );
         })}
       </div>
+      {/* <div className="cards" id="cards-alojamientos">
+        {alojamientosFiltrados.map((alojamiento, index) => {
+          const alojamientoImagenes = imagenes.filter(imagen => imagen.idAlojamiento === alojamiento.idAlojamiento);
+          const tipoAlojamiento = tiposAlojamiento.find(tipo => tipo.idTipoAlojamiento === alojamiento.idTipoAlojamiento);
+          const alojamientoServicios = alojamientosServicios
+            .filter(alojamientoServicio => alojamientoServicio.idAlojamiento === alojamiento.idAlojamiento)
+            .map(alojamientoServicio => {
+              const servicio = servicios.find(servicio => servicio.idServicio === alojamientoServicio.idServicio);
+              return servicio ? servicio.Nombre : 'Servicio no disponible';
+            });
+
+          return (
+            <Link key={alojamiento.idAlojamiento} to={`/detalleAlojamiento/${alojamiento.idAlojamiento}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+            <div className="card1" key={index}>
+              {alojamientoImagenes.map((imagen, imgIndex) => (
+                <img key={imgIndex} src={imagen.RutaArchivo} alt={`Imagen de ${alojamiento.Titulo}`} />
+              ))}
+              <h2>{alojamiento.Titulo}</h2>
+              <h3>{alojamiento.Descripcion}</h3>
+              <h4>{alojamiento.PrecioPorDia}</h4>
+              <h4>estado: {alojamiento.Estado}</h4>
+              <h4>dormitorios: {alojamiento.CantidadDormitorios}</h4>
+              <h4>baños: {alojamiento.CantidadBanios}</h4>
+              <h4>tipo de alojamiento: {tipoAlojamiento ? tipoAlojamiento.Descripcion : 'Tipo de alojamiento no disponible'}</h4>
+              <h4>Servicios:</h4>
+              <ul className="grid-servicios">
+                {alojamientoServicios.map((servicio, srvIndex) => (
+                  <li key={srvIndex}>{servicio.replace(/^\./, ' ')}</li>
+                ))}
+              </ul>
+              <div className="card-precio">
+                <span className="precio">{alojamiento.PrecioPorDia}</span>
+                <span className="texto-precio">/noche</span>
+              </div>
+            </div>
+            </Link>
+          );
+        })}
+      </div> */}
     </div>
   );
 };
