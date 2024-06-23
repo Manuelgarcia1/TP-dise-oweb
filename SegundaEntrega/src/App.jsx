@@ -31,6 +31,7 @@ function App() {
           <Route path="/contacto" element={<FormularioContacto />} />
           <Route path="/sobreNosotros" element={<SobreNosotros />} />
           <Route path="/seguridad" element={<Login />} />
+          <Route path="/detalleAlojamiento/:idAlojamiento" element={<VistaDetallada />} />
           <Route path="/addAlojamiento" element={<ProtectedRoute><AddAlojamiento /></ProtectedRoute>} />
         </Routes>
         <Footer />

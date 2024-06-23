@@ -4,49 +4,49 @@ import './VistaDetallada.css';
 
 const VistaDetallada = () => {
   const { idAlojamiento } = useParams();
-  console.log('ID de alojamiento:', idAlojamiento);
-  const [alojamiento, setAlojamiento] = useState(null);
+  const [alojamiento, setAlojamiento] = useState({});
   const [imagenes, setImagenes] = useState([]);
   const [tipoAlojamiento, setTipoAlojamiento] = useState(null);
   const [servicios, setServicios] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    console.log('ID de alojamiento:', idAlojamiento);
 
+  useEffect(() => {
     const fetchData = async () => {
       try {
-        if (!idAlojamiento) return; // Agregar una verificación para idAlojamiento
-
-        const [alojamientosResponse, tiposAlojamientoResponse, imagenesResponse, serviciosResponse] = await Promise.all([
-          fetch(`http://localhost:3000/alojamiento/getAlojamientoById/${idAlojamiento}`),
-          fetch('http://localhost:3000/tiposAlojamiento/getTiposAlojamiento'),
-          fetch(`http://localhost:3000/imagen/getImagenesByAlojamiento/${idAlojamiento}`),
-          fetch(`http://localhost:3000/servicios/getServiciosByAlojamiento/${idAlojamiento}`)
+        const [
+          alojamientoResponse,
+          imagenesResponse,
+          tipoAlojamientoResponse,
+          serviciosResponse
+        ] = await Promise.all([
+          fetch(`http://localhost:3000/alojamiento/getAlojamiento/${idAlojamiento}`),
+          fetch(`http://localhost:3000/imagen/getImagen/${idAlojamiento}`),
+          fetch(`http://localhost:3000/tipoAlojamiento/getTiposAlojamiento/${idAlojamiento}`),
+          fetch(`http://localhost:3000/alojamiento/getAlojamientoServicio/${idAlojamiento}`)
         ]);
 
-        const [alojamientoData, tiposAlojamientoData, imagenesData, serviciosData] = await Promise.all([
-          alojamientosResponse.json(),
-          tiposAlojamientoResponse.json(),
+        const [
+          alojamientoData,
+          imagenesData,
+          tipoAlojamientoData,
+          serviciosData
+        ] = await Promise.all([
+          alojamientoResponse.json(),
           imagenesResponse.json(),
+          tipoAlojamientoResponse.json(),
           serviciosResponse.json()
         ]);
 
-        console.log('Respuesta de alojamiento:', alojamientoData);
-        console.log('Respuesta de tipos de alojamiento:', tiposAlojamientoData);
-        console.log('Respuesta de imágenes:', imagenesData);
-        console.log('Respuesta de servicios:', serviciosData);
-
         setAlojamiento(alojamientoData);
-        setTipoAlojamiento(tiposAlojamientoData.find(tipo => tipo.idTipoAlojamiento === alojamientoData.idTipoAlojamiento));
         setImagenes(imagenesData);
+        setTipoAlojamiento(tipoAlojamientoData);
         setServicios(serviciosData);
         setLoading(false);
       } catch (error) {
-        setError(error.message || 'Error al obtener los datos del alojamiento');
+        setError('Error al obtener los detalles del alojamiento');
         setLoading(false);
-        console.error('Error al obtener datos del alojamiento:', error);
       }
     };
 
@@ -54,15 +54,11 @@ const VistaDetallada = () => {
   }, [idAlojamiento]);
 
   if (loading) {
-    return <div>Cargando datos del alojamiento...</div>;
+    return <p>Cargando...</p>;
   }
 
   if (error) {
-    return <div>Error: {error}</div>;
-  }
-
-  if (!alojamiento) {
-    return <div>No se encontró el alojamiento con el ID especificado</div>;
+    return <p>{error}</p>;
   }
 
   return (

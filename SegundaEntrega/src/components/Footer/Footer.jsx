@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Footer.css';
 import logo from '../../assets/logo/Logo.png';
 
@@ -17,9 +18,9 @@ const Footer = () => {
         </figure>
         <div className="footer-nav-container">         
           <ul className="footer-nav">
-            <li className="footer-nav-link"><a href="#">Sobre Nosotros</a></li>         
-            <li className="footer-nav-link"><a href="#">Alojamientos</a></li>
-            <li className="footer-nav-link"><a href="#">Contáctanos</a></li>
+            <li className="footer-nav-link"><Link to="/sobreNosotros">Sobre Nosotros</Link></li>
+            <li className="footer-nav-link"><Link to="/#cards-alojamientos">Alojamientos</Link></li>
+            <li className="footer-nav-link"><Link to="/contacto">Contáctanos</Link></li>
           </ul>
         </div>                                                  
       </div>
