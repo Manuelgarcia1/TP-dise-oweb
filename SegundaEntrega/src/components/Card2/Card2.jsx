@@ -46,7 +46,7 @@ const Promociones = () => {
         ]);
         console.log('Datos de alojamientosServicios:', alojamientosServiciosData);
 
-         setAlojamientos(alojamientosData);
+        setAlojamientos(alojamientosData);
         setTiposAlojamiento(tiposAlojamientoData);
         setImagenes(imagenesData);
         setServicios(serviciosData);
