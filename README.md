@@ -4,9 +4,12 @@
 
 
 ![Github](https://img.shields.io/badge/Github-%23181717?style=for-the-badge&logo=github&logoColor=white)
+![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
 ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+
 
 # Especificaciones funcionales :clipboard:
 
@@ -14,24 +17,27 @@
 ## Introducción 🌟
 Proyecto Final para la materia de Introducción al Desarrollo Web de la Tecnicatura en Desarrollo Web de la Universidad de Entre Ríos. El proyecto consiste en realizar una página web dinámica que consuma un servicio de API, el proyecto a realizar sera una plataforma digital dedicada a la oferta de alojamientos a particulares y turísticos (alquiler vacacional) mediante la cual los anfitriones pueden publicitar y contratar el arriendo de sus propiedades con sus huéspedes.
 
-## 1era ETAPA TRABAJO FINAL INTEGRADOR
-
-### OBJETIVOS
-Son objetivos de esta primer entrega que el estudiante:
-- Ponga en práctica todos los conocimientos adquiridos sobre HTML y CSS.
-- Defina la estructura de la aplicación Web que servirá como base para la realización del Trabajo Final Integrador. Esta estructura deberá tener como mínimo: una página inicial, una página con información de contacto y una página con información institucional.
-- Establezca un estilo para dicha estructura Web.
-
-### CONDICIONES DE ENTREGA
-La entrega del primer avance deberá:
-- Realizarse en forma individual o en grupos de NO más de 4 (cuatro) alumnos.
-- Cargarse en la sección del Campus Virtual correspondiente, en un archivo comprimido en formato ZIP, RAR, TAR.GZ u otro formato similar. o cargar en un archivo el enlace al repositorio GitHub que deberá estar disponible para los profesores del curso.
-- En caso de realizar en grupo, deberá indicarse el apellido y nombre de los integrantes del mismo.
-- Entregarse antes de la fecha límite informada en el campus.
-
 
 ## Funcionalidades :gear:
-En progreso 
+#### En referencia a los Alojamientos:
+- Registrar un nuevo alojamiento.
+- Editar los datos de uno existente.
+- Eliminar un alojamiento.
+#### En relación a Imágenes:
+- Registrar una nueva.
+- Editar los datos de una existente.
+- Eliminar una imágen.
+#### En relación a Servicios:
+- Registrar uno nuevo.
+- Editar los datos de uno existente.
+- Eliminar un servicio.
+#### En relación a Alojamiento Servicios:
+- Registrar una nueva.
+- Editar los datos de una existente.
+- Eliminar una relación alojamiento - servicios.
+#### En relación al usuario admin:
+- Iniciar sesión.
+- Cerrar sesión.
 
 # Especificaciones técnicas 🛠️
 
@@ -44,8 +50,8 @@ En progreso
  
 ## Tecnologías y herramientas 🚀
 
-Nuestro proyecto será desarrollado utilizando HTML, CSS y JavaScript. Además, aprovecharemos herramientas esenciales como Github para la gestión del código. Para el diseño y la creación de interfaces de usuario, utilizaremos aplicaciones como Figma, que nos permitirán visualizar y compartir nuestras ideas de manera efectiva.
-![Figma](https://www.figma.com/file/Ou9J8RxD93kXtFHnGAsD3b/Proyecto-Web?type=design&node-id=0%3A1&mode=design&t=gbqU1NRnPoEgd9ia-1)
+Nuestro proyecto será desarrollado utilizando HTML, CSS, JavaScript y React, además, se consumira la API proporcionada por los profesores para que conecte con una base de datos utilizando MySQL Workbench. También, aprovecharemos herramientas esenciales como Github para la gestión del código. Para el diseño y la creación de interfaces de usuario, utilizaremos aplicaciones como Figma, que nos permitirán visualizar y compartir nuestras ideas de manera efectiva.
+[Figma](https://www.figma.com/file/Ou9J8RxD93kXtFHnGAsD3b/Proyecto-Web?type=design&node-id=0%3A1&mode=design&t=gbqU1NRnPoEgd9ia-1)
 
 ## Metodología de trabajo 🔄
 
@@ -58,6 +64,11 @@ Esta estrategia fomentará el desarrollo de nuestras habilidades de comunicació
 
 Es importante que ambos servidores tanto el frontend como el backend se esten ejecuetando al mismo tiempo.
 A continuacion les damos las instrucciones correspondientes.
+
+### Login usuario admin credenciales
+- email: ignac1997nacho@gmail.com
+- password: 1234
+
 
 ### Frontend
 
