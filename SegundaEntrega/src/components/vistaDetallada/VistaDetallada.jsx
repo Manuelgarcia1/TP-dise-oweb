@@ -11,10 +11,11 @@ const VistaDetallada = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-
   useEffect(() => {
     const fetchData = async () => {
       try {
+        console.log(`Fetching data for alojamiento ID: ${idAlojamiento}`);
+
         const [
           alojamientoResponse,
           imagenesResponse,
@@ -23,9 +24,20 @@ const VistaDetallada = () => {
         ] = await Promise.all([
           fetch(`http://localhost:3000/alojamiento/getAlojamiento/${idAlojamiento}`),
           fetch(`http://localhost:3000/imagen/getImagen/${idAlojamiento}`),
-          fetch(`http://localhost:3000/tipoAlojamiento/getTiposAlojamiento/${idAlojamiento}`),
+          fetch(`http://localhost:3000/tipoAlojamiento/getTipoAlojamiento/${idAlojamiento}`),
           fetch(`http://localhost:3000/alojamiento/getAlojamientoServicio/${idAlojamiento}`)
         ]);
+
+        console.log('Responses received:', {
+          alojamientoResponse,
+          imagenesResponse,
+          tipoAlojamientoResponse,
+          serviciosResponse
+        });
+
+        if (!alojamientoResponse.ok || !imagenesResponse.ok || !tipoAlojamientoResponse.ok || !serviciosResponse.ok) {
+          throw new Error('Error al obtener los datos');
+        }
 
         const [
           alojamientoData,
@@ -39,12 +51,20 @@ const VistaDetallada = () => {
           serviciosResponse.json()
         ]);
 
+        console.log('Data received:', {
+          alojamientoData,
+          imagenesData,
+          tipoAlojamientoData,
+          serviciosData
+        });
+
         setAlojamiento(alojamientoData);
         setImagenes(imagenesData);
         setTipoAlojamiento(tipoAlojamientoData);
         setServicios(serviciosData);
         setLoading(false);
       } catch (error) {
+        console.error('Error fetching data:', error);
         setError('Error al obtener los detalles del alojamiento');
         setLoading(false);
       }

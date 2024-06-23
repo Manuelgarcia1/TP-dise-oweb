@@ -53,15 +53,15 @@ const NavbarComponent = () => {
                   Admin
                 </Link>
               </li>
-              <ul className={`nav-container-links ${isOpen ? 'open' : ''}`}>
-
                 {isAuthenticated && (
-                  <div className="logout-area" style={{ display: 'block' }}>
-                    <span style={{ display: 'block' }}>Bienvenido, {usernameBeforeAt}</span>
-                    <button style={{ display: 'block' }} onClick={handleLogout}>Salir</button>
+                  <div className="logout-area">
+                    <div className='name-container-user'>
+                      <span>Bienvenido,</span>
+                      <span className='user-name'>{usernameBeforeAt}</span>
+                    </div>
+                    <button className='btn-logout' onClick={handleLogout}>Cerrar sesión</button>
                   </div>
                 )}
-              </ul>
             </ul>
             <button className="nav-toggler" onClick={toggleNavbar}>
               <span></span>
