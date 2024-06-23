@@ -54,10 +54,10 @@ Para optimizar nuestra eficacia y aprovechar nuestras capacidades al máximo, nu
 Esta estrategia fomentará el desarrollo de nuestras habilidades de comunicación y trabajo en equipo, al mismo tiempo que estimulará nuestras aptitudes de gestión.
 
 
-## Instalación y configuración del proyecto⚠️
-    Es importante que ambos servidores tanto el frontend como el backend se esten ejecuetando al mismo tiempo.
-    A continuacion les damos las instrucciones correspondientes.
+## Instalación y configuración del proyecto ⚠️
 
+Es importante que ambos servidores tanto el frontend como el backend se esten ejecuetando al mismo tiempo.
+A continuacion les damos las instrucciones correspondientes.
 
 ### Frontend
 
