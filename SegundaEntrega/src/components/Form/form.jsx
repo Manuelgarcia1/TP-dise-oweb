@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import './form.css';
-import Promociones from '../Card2/Card2.jsx';
 
 const AddAlojamiento = () => { 
   const [titulo, setTitulo] = useState('');
@@ -586,7 +585,7 @@ const AddAlojamiento = () => {
     <option value="">Selecciona un tipo de alojamiento</option>
     {tiposAlojamiento.map((tipoAlojamiento, index) => (
       <option key={index} value={tipoAlojamiento.idTipoAlojamiento}>
-        {tipoAlojamiento.idTipoAlojamiento}
+        {tipoAlojamiento.idTipoAlojamiento} {tipoAlojamiento.Descripcion}
       </option>
     ))}
   </select>
@@ -877,3 +876,4 @@ const AddAlojamiento = () => {
 };
 
 export default AddAlojamiento;
+ 
