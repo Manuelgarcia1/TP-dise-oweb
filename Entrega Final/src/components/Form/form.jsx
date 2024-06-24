@@ -602,7 +602,7 @@ const AddAlojamiento = () => {
               <option value="">Selecciona un tipo de alojamiento</option>
               {tiposAlojamiento.map((tipoAlojamiento, index) => (
                 <option key={index} value={tipoAlojamiento.idTipoAlojamiento}>
-                  {tipoAlojamiento.idTipoAlojamiento}
+                  {tipoAlojamiento.idTipoAlojamiento} {tipoAlojamiento.Descripcion}
                 </option>
               ))}
             </select>
