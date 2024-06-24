@@ -40,12 +40,13 @@ body{
   
   .cards{
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 0 auto;
-    width: 80%;
-    padding-bottom: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
   }
+
   .buscadores {
     display: flex;
     flex-wrap: wrap;
@@ -75,39 +76,45 @@ body{
     cursor: pointer;
 }
   .card1{
-    width: 330px;
     overflow: auto;
     background-color: #ffff;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     cursor: pointer;
+    width: 295px;
   }
   
   .card1 img{
     width: 295px;
     height: 220px;
     margin: 0 auto;
-    margin-top: 10px;
-  }
-  
-  .card1 h2, h3, h4, h5{
-    margin:4px 14px;
   }
   
   .card1 h2{
-    margin-top: 20px;
-    font-size: 14px;
+    padding-top: 15px;
+    font-size: 20px;
     font-weight: bold;
     color: #5E5E5E;
   }
+  .tipo-alojamiento{
+    color: #007bff;;
+  }
   
-  .card1 h4{
-    margin-top: 20px;
-    font-weight: 100;
-    font-size: 15px;
-    color: #5E5E5E;
-    font-weight: bold;
+  .container-description{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .disponibilidad{
+    font-weight: 500;
+  }
+
+  .container-description-row{
+    flex-direction: row;
+    gap: 15px;
   }
   
   .card-precio{
@@ -115,8 +122,9 @@ body{
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin: 10px;
+    padding: 20px;
     font-family:"Inter", sans-serif; 
+    color: #007bff;;
   }
   .grid-servicios {
     display: grid;

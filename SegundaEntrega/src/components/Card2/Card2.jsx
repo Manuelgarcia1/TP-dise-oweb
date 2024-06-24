@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import './Card2.css';
+import { Link } from 'react-router-dom';
 
 const Promociones = () => {
+  const [cargando, setCargando] = useState(true);
   const [alojamientos, setAlojamientos] = useState([]);
   const [imagenes, setImagenes] = useState([]);
   const [tiposAlojamiento, setTiposAlojamiento] = useState([]);
@@ -46,7 +48,7 @@ const Promociones = () => {
         ]);
         console.log('Datos de alojamientosServicios:', alojamientosServiciosData);
 
-         setAlojamientos(alojamientosData);
+        setAlojamientos(alojamientosData);
         setTiposAlojamiento(tiposAlojamientoData);
         setImagenes(imagenesData);
         setServicios(serviciosData);
@@ -117,8 +119,7 @@ const Promociones = () => {
           </select>
         </div>
       </div>
-
-      <div className="cards">
+      <div className="cards" id="cards-alojamientos">
         {alojamientosFiltrados.map((alojamiento, index) => {
           const alojamientoImagenes = imagenes.filter(imagen => imagen.idAlojamiento === alojamiento.idAlojamiento);
           const tipoAlojamiento = tiposAlojamiento.find(tipo => tipo.idTipoAlojamiento === alojamiento.idTipoAlojamiento);
@@ -130,32 +131,41 @@ const Promociones = () => {
             });
 
           return (
+            // <Link key={alojamiento.idAlojamiento} to={`/detalleAlojamiento/${alojamiento.idAlojamiento}`} style={{ textDecoration: 'none', color: 'inherit' }}>
             <div className="card1" key={index}>
               {alojamientoImagenes.map((imagen, imgIndex) => (
                 <img key={imgIndex} src={imagen.RutaArchivo} alt={`Imagen de ${alojamiento.Titulo}`} />
               ))}
-              <h2>{alojamiento.Titulo}</h2>
-              <h3>{alojamiento.Descripcion}</h3>
-              <h4>{alojamiento.PrecioPorDia}</h4>
-              <h4>estado: {alojamiento.Estado}</h4>
-              <h4>dormitorios: {alojamiento.CantidadDormitorios}</h4>
-              <h4>baños: {alojamiento.CantidadBanios}</h4>
-              <h4>tipo de alojamiento: {tipoAlojamiento ? tipoAlojamiento.Descripcion : 'Tipo de alojamiento no disponible'}</h4>
-              <h4>Servicios:</h4>
-              <ul className="grid-servicios">
-  {alojamientoServicios.map((servicio, srvIndex) => (
-    <li key={srvIndex}>{servicio.replace(/^\./, ' ')}</li>
-  ))}
-</ul>
+              <div className='container-description'>
+                <h2>{alojamiento.Titulo}</h2>
+                <p className='tipo-alojamiento'>{tipoAlojamiento ? tipoAlojamiento.Descripcion : 'Tipo de alojamiento no disponible'}</p>
+              </div>    
+              <div className='container-description container-description-row'>
+                <p>Dormitorios: {alojamiento.CantidadDormitorios}</p>
+                <p>Baños: {alojamiento.CantidadBanios}</p> 
+              </div>         
+              <div className='container-description'>
+                <p>{alojamiento.Descripcion}</p>
+                <p>Estado: <span className='disponibilidad'>{alojamiento.Estado}</span></p>      
+              </div>                  
+              <div className='container-description'>
+                <p>Servicios</p>
+                <ul className="grid-servicios">
+                  {alojamientoServicios.map((servicio, srvIndex) => (
+                    <li key={srvIndex}>{servicio.replace(/^\./, ' ')}</li>
+                  ))}
+                </ul>
+              </div>
               <div className="card-precio">
                 <span className="precio">{alojamiento.PrecioPorDia}</span>
                 <span className="texto-precio">/noche</span>
               </div>
             </div>
+            // </Link>
           );
         })}
       </div>
-    </div>
+      </div>
   );
 };
 
