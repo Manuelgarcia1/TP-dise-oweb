@@ -105,3 +105,12 @@ Para correr el proyecto en local se utilizara el comando:
 ```npm run dev```
 
 
+Para la conexion con la base de datos: 
+Crear un archivo .env en la carpeta Backend con las credenciales de su conexion en Workbench teniendo este modelo:
+DB_HOST=localhost
+DB_USER=nombre_usuario
+DB_PASSWORD=contraseña_personal
+DB_NAME=idw
+DB_CONNECTION_LIMIT=10
+DB_QUEUE_LIMIT=0
+
