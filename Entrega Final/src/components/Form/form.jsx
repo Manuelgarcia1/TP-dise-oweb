@@ -508,8 +508,8 @@ const AddAlojamiento = () => {
   return (
     <>
     <div className='div-botones'>
-        <button className='boton-nav' onClick={() => mostrarSeccionHandler('agregar_alojamiento')} >Agregar Alojamiento</button>
-        <button className='boton-nav' onClick={() => mostrarSeccionHandler('tipo_alojamiento')}>Tipo de Alojamiento</button>
+        <button className='boton-nav' id='boton-nav1' onClick={() => mostrarSeccionHandler('agregar_alojamiento')} >Agregar Alojamiento</button>
+        <button className='boton-nav' id='boton-nav2' onClick={() => mostrarSeccionHandler('tipo_alojamiento')}>Tipo de Alojamiento</button>
         <button className='boton-nav' onClick={() => mostrarSeccionHandler('descripcion_servicio')}>Descripción del Servicio</button>
         <button className='boton-nav' onClick={() => mostrarSeccionHandler('alojamiento_servicio')}>Alojamiento Servicio</button>
         <button className='boton-nav' onClick={() => mostrarSeccionHandler('imagenes')}>Imágenes</button>
@@ -607,7 +607,7 @@ const AddAlojamiento = () => {
               ))}
             </select>
           </div>
-          <button type="submit">enviar</button>
+          <button type="submit" id='boton-agregar'>enviar</button>
         </form>
       </div>
       <div className={`seccion ${mostrarSeccion === 'tipo_alojamiento' ? 'mostrar' : 'ocultar'}`}>
@@ -622,7 +622,7 @@ const AddAlojamiento = () => {
               onChange={e => setDescripcion2(e.target.value)}
             />
           </div>
-          <button type="submit">enviar</button>
+          <button type="submit" id='boton-enviar'>enviar</button>
         </form>
       </div>
       <div className={`seccion ${mostrarSeccion === 'descripcion_servicio' ? 'mostrar' : 'ocultar'}`}>
