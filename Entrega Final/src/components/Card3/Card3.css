@@ -105,12 +105,15 @@
     .Card3Contenedor{
       display: flex;
       flex-direction: row;
-      width: 0vh;
       height: 120vh;
 }
 .contenedor-imagenes-pequenas {
   flex-direction: column-reverse;
   align-items: center;
   flex-wrap: nowrap;
+  padding-left: 0%;
+}
+.imagen-grande{
+  display: none;
 }
     }
