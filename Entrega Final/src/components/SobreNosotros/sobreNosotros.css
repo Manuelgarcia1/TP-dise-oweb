@@ -35,12 +35,28 @@
   align-items: center;
   flex-direction: column;
 }
+
+.ul-sn {
+  list-style-position: inside;
+}
+
 @media (max-width: 768px) {
   .contenedor-sn {
     display: flex;
-    padding-left: 10%;
-    padding-right: 10%;
     flex-direction: column-reverse;
     flex-wrap: wrap;
+    align-items: center;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-bottom: 5% ;
   }
+
+.titulo-sn {
+  font-size: 4rem;
 }
+.imagen-sn {
+  width: 40vh;
+  height: 52vh;
+}
+}
+
