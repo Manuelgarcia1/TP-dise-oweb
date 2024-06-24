@@ -112,8 +112,13 @@
   align-items: center;
   flex-wrap: nowrap;
   padding-left: 0%;
+  width: 100%;
 }
 .imagen-grande{
   display: none;
+}
+
+.contenedor-opciones {
+  padding: 10px;
 }
     }
