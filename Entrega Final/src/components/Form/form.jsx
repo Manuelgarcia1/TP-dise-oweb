@@ -694,7 +694,10 @@ const AddAlojamiento = () => {
       {/*------------- */}
       {/* alojamiento */}
 
-      <ul>
+      {/* LISTA ALOJAMIENTOS*/}
+      <div className={`seccion ${mostrarSeccion === 'lista_alojamientos' ? 'mostrar' : 'ocultar'}`}>
+      <h1>Lista de Alojamientos</h1>
+      <ul className='hola'>
         {alojamientos.map((alojamiento, index) => {
           return (
             <li key={index}>
@@ -769,9 +772,6 @@ const AddAlojamiento = () => {
           );
         })}
       </ul>
-      {/* LISTA ALOJAMIENTOS*/}
-      <div className={`seccion ${mostrarSeccion === 'lista_alojamientos' ? 'mostrar' : 'ocultar'}`}>
-      <h1>Lista de Alojamientos</h1>
       <h2>Lista de Tipos de Alojamiento</h2>
       <ul>
         {tiposAlojamiento.map((tipo, index) => {
