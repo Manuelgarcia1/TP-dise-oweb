@@ -182,6 +182,30 @@
       .nav-toggler.toggler-open ~ .title-area .header-title {
         display: none;
       }
+
+      .logout-area{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+      }
+      .user-name{
+        color: #65AEF2;
+        font-weight: 600;
+      }
+    
+      .btn-logout{
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        font-weight: 700;
+        text-decoration: underline;
+        padding: 10px;
+      }
+      .btn-logout:hover{
+         color: midnightblue;
+      }
     }
     /* mobile breakpoint end */
     
@@ -195,6 +219,11 @@
       .site-navbar .nav-container-links .nav-link a{
         font-size: 1rem;;
       }
+      .name-container-user{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
     }
     .background-image {
       position: absolute;
@@ -205,3 +234,31 @@
       z-index: -1; /* Enviar la imagen hacia atrás */
     }
   /* CSS NAVBAR FIN */
+
+  .logout-area{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    padding-right: 10px;
+  }
+  .name-container-user{
+    display: flex;
+    gap: 5px;
+  }
+  .user-name{
+    color: #65AEF2;
+    font-weight: 600;
+  }
+
+  .btn-logout{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-weight: 700;
+    text-decoration: underline;
+  }
+  .btn-logout:hover{
+     color: midnightblue;
+  }
