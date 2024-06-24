@@ -1,7 +1,11 @@
 import { useState, useEffect } from 'react';
 import './form.css';
 
-const AddAlojamiento = () => { 
+const AddAlojamiento = () => {
+
+  const [mostrarSeccion, setMostrarSeccion] = useState('');
+
+
   const [titulo, setTitulo] = useState('');
   const [descripcion, setDescripcion] = useState('');
   const [tiposAlojamiento, setTiposAlojamiento] = useState([]);
@@ -39,8 +43,8 @@ const AddAlojamiento = () => {
   const [imagenEditando, setImagenEditando] = useState(null);
   const [rutaArchivoEditando, setRutaArchivoEditando] = useState('');
   const [, setIdImagenEditando] = useState('');
-  const  [descripcion2, setDescripcion2] = useState('');
-  const [idAlojamiento1,setIdAlojamiento1] = useState('');
+  const [descripcion2, setDescripcion2] = useState('');
+  const [idAlojamiento1, setIdAlojamiento1] = useState('');
   const [idTipoAlojamientoEditando, setIdTipoAlojamientoEditando] = useState('');
   {/* imagenes */ }
   const enviarNuevaImagen = async (e) => {
@@ -87,19 +91,19 @@ const AddAlojamiento = () => {
       fetch(`http://localhost:3000/imagen/deleteImagen/${id}`, {
         method: 'DELETE',
       })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Error al eliminar la imagen');
-        }
-        return response.json();
-      })
-      .then(data => {
-        alert('Imagen eliminada con éxito:', data);
-        obtenerImagenes();
-      })
-      .catch(error => {
-        alert('Error:', error);
-      });
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Error al eliminar la imagen');
+          }
+          return response.json();
+        })
+        .then(data => {
+          alert('Imagen eliminada con éxito:', data);
+          obtenerImagenes();
+        })
+        .catch(error => {
+          alert('Error:', error);
+        });
     }
   }
   const iniciarEdicionImagen = (imagen) => {
@@ -114,7 +118,7 @@ const AddAlojamiento = () => {
       RutaArchivo: rutaArchivoEditando,
       idAlojamiento: idAlojamientoEditando,
     };
-  
+
     try {
       const response = await fetch(`http://localhost:3000/imagen/updateImagen/${imagenEditando}`, {
         method: 'PUT',
@@ -123,7 +127,7 @@ const AddAlojamiento = () => {
         },
         body: JSON.stringify(imagenAEditar)
       });
-  
+
       if (response.ok) {
         alert('Imagen actualizada');
         obtenerImagenes();
@@ -133,7 +137,7 @@ const AddAlojamiento = () => {
     } catch (error) {
       console.error('Error al actualizar la imagen', error);
     }
-  
+
     setImagenEditando(null);
     setRutaArchivoEditando('');
     setIdAlojamientoEditando('');
@@ -311,17 +315,17 @@ const AddAlojamiento = () => {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-  idAlojamiento: idAlojamiento,
-  titulo: titulo,
-  descripcion: descripcion,
-  latitud: latitud,
-  longitud: longitud,
-  precioPorDia: precioPorDia,
-  cantidadDormitorios: cantidadDormitorios,
-  cantidadBanios: cantidadBanios,
-  estado: estado,
-  idTipoAlojamiento: tipoAlojamiento
-})
+          idAlojamiento: idAlojamiento,
+          titulo: titulo,
+          descripcion: descripcion,
+          latitud: latitud,
+          longitud: longitud,
+          precioPorDia: precioPorDia,
+          cantidadDormitorios: cantidadDormitorios,
+          cantidadBanios: cantidadBanios,
+          estado: estado,
+          idTipoAlojamiento: tipoAlojamiento
+        })
       });
 
       if (response.ok) {
@@ -465,6 +469,11 @@ const AddAlojamiento = () => {
     setAlojamientoEditando(tipo.idTipoAlojamiento);
     setDescripcionEditando(tipo.Descripcion);
   };
+  
+  const mostrarSeccionHandler = (seccion) => {
+    setMostrarSeccion(seccion);
+  };
+
   const confirmarEdicion = async () => {
     const alojamientoActualizado = {
       Descripcion: descripcionEditando
@@ -497,174 +506,194 @@ const AddAlojamiento = () => {
     obtenerImagenes();
   }, []);
   return (
+    <>
+    <div className='div-botones'>
+        <button className='boton-nav' onClick={() => mostrarSeccionHandler('agregar_alojamiento')} >Agregar Alojamiento</button>
+        <button className='boton-nav' onClick={() => mostrarSeccionHandler('tipo_alojamiento')}>Tipo de Alojamiento</button>
+        <button className='boton-nav' onClick={() => mostrarSeccionHandler('descripcion_servicio')}>Descripción del Servicio</button>
+        <button className='boton-nav' onClick={() => mostrarSeccionHandler('alojamiento_servicio')}>Alojamiento Servicio</button>
+        <button className='boton-nav' onClick={() => mostrarSeccionHandler('imagenes')}>Imágenes</button>
+        <button className='boton-nav' onClick={() => mostrarSeccionHandler('lista_alojamientos')}>Lista de Alojamientos</button>
+    </div>
     <div className="contenedorAddAlojamientos">
-      <h2>agregar alojamiento</h2>
-      <p>ingresa los datos del alojamiento</p>
-      {/* alojamiento */}
-      <form onSubmit={enviarNuevoAlojamiento}>
-        <div>
-          <label htmlFor="titulo">Titulo: </label>
-          <input
-            type="text"
-            id="titulo"
-            value={titulo}
-            onChange={e => setTitulo(e.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor="precioPorDia">Precio por día: </label>
-          <input
-            type="number"
-            id="precioPorDia"
-            value={precioPorDia}
-            onChange={e => setPrecioPorDia(e.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor="descripcion">Descripcion: </label>
-          <input
-            type="text"
-            id="descripcion"
-            value={descripcion}
-            onChange={e => setDescripcion(e.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor="latitud">Latitud: </label>
-          <input
-            type="text"
-            id="latitud"
-            value={latitud}
-            onChange={e => setLatitud(e.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor="longitud">Longitud: </label>
-          <input
-            type="text"
-            id="longitud"
-            value={longitud}
-            onChange={e => setLongitud(e.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor="cantidadDormitorios">Cantidad de Dormitorios: </label>
-          <input
-            type="number"
-            id="cantidadDormitorios"
-            value={cantidadDormitorios}
-            onChange={e => setCantidadDormitorios(e.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor="cantidadBanios">Cantidad de Baños: </label>
-          <input
-            type="number"
-            id="cantidadBanios"
-            value={cantidadBanios}
-            onChange={e => setCantidadBanios(e.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor="estado">Estado: </label>
-          <input
-            type="text"
-            id="estado"
-            value={estado}
-            onChange={e => setEstado(e.target.value)}
-          />
-        </div>
-        
-        <div>
-  <label htmlFor="tipoAlojamiento">id tipo de Alojamiento: </label>
-  <select
-    id="tipoAlojamiento"
-    value={tipoAlojamiento}
-    onChange={e => setTipoAlojamiento(e.target.value)}
-  >
-    <option value="">Selecciona un tipo de alojamiento</option>
-    {tiposAlojamiento.map((tipoAlojamiento, index) => (
-      <option key={index} value={tipoAlojamiento.idTipoAlojamiento}>
-        {tipoAlojamiento.idTipoAlojamiento}
-      </option>
-    ))}
-  </select>
-</div>
-        <button type="submit">enviar</button>
-      </form>
-      {/* tipo de alojamiento */}
-      <form onSubmit={enviar}>
-  <div>
-    <label htmlFor="descripcionAlojamiento">ingrese tipo de alojamiento: </label>
-    <input
-      type="text"
-      id="descripcionAlojamiento"
-      value={descripcion2}
-      onChange={e => setDescripcion2(e.target.value)}
-    />
-  </div>
-  <button type="submit">enviar</button>
-      </form>
-      { /* servicios */}
-      <form onSubmit={enviarNuevoServicio}>
-        <div>
-          <label htmlFor="descripcionServicio">Descripción del Servicio: </label>
-          <input
-            type="text"
-            id="descripcionServicio"
-            value={descripcion1}
-            onChange={e => setDescripcion1(e.target.value)}
-          />
-        </div>
-        <button type="submit">Agregar Servicio</button>
-      </form>
-      {/* alojamiento servicios */}
-      <form onSubmit={(e) => enviarNuevoAlojamientoServicio(e, parseInt(idAlojamiento), parseInt(idServicio))}>
-      <select value={idAlojamiento} onChange={(e) => setIdAlojamiento(e.target.value)}>
-        <option value="">Selecciona un alojamiento</option>
-        {alojamientos.map((alojamiento, index) => (
-          <option key={index} value={alojamiento.id}>
-            {alojamiento.idAlojamiento} {alojamiento.Titulo}
-          </option>
-    ))}
-  </select>
-  <select value={idServicio} onChange={(e) => setIdServicio(e.target.value)}>
-    <option value="">Selecciona un servicio</option>
-    {servicios.map((servicio) => (
-      <option key={servicio.idServicio} value={servicio.id}>
-        {servicio.idServicio} {servicio.Nombre}
-      </option>
-    ))}
-  </select>
-  <button type="submit">Enviar</button>
-      </form>
-      {/* imagenes */}
-      <form onSubmit={(e) => enviarNuevaImagen(e)}>
-  <div>
-    <label htmlFor="imagen">Imagen: </label>
-    <input
-      type="text"
-      id="imagen"
-      value={imagen}
-      onChange={e => setImagen(e.target.value)}
-    />
-  </div>
-  <div>
-    <label htmlFor="idAlojamiento">ID de Alojamiento: </label>
-    <select id="idAlojamiento" value={idAlojamiento1} onChange={e => setIdAlojamiento1(e.target.value)}>
-      <option value="">Selecciona un alojamiento</option>
-      {alojamientos.map((alojamiento, index) => (
-        <option key={index} value={alojamiento.idAlojamiento}>
-          {alojamiento.idAlojamiento} - {alojamiento.Titulo}
-        </option>
-      ))}
-    </select>
-  </div>
-  <button type="submit">Agregar imagen</button>
-      </form>
+      <div className={`seccion ${mostrarSeccion === 'agregar_alojamiento' ? 'mostrar' : 'ocultar'}`}>
+        <h2>agregar alojamiento</h2>
+        <p>ingresa los datos del alojamiento</p>
+        {/* alojamiento */}
+        <form onSubmit={enviarNuevoAlojamiento}>
+          <div>
+            <label htmlFor="titulo">Titulo: </label>
+            <input
+              type="text"
+              id="titulo"
+              value={titulo}
+              onChange={e => setTitulo(e.target.value)}
+            />
+          </div>
+          <div>
+            <label htmlFor="precioPorDia">Precio por día: </label>
+            <input
+              type="number"
+              id="precioPorDia"
+              value={precioPorDia}
+              onChange={e => setPrecioPorDia(e.target.value)}
+            />
+          </div>
+          <div>
+            <label htmlFor="descripcion">Descripcion: </label>
+            <input
+              type="text"
+              id="descripcion"
+              value={descripcion}
+              onChange={e => setDescripcion(e.target.value)}
+            />
+          </div>
+          <div>
+            <label htmlFor="latitud">Latitud: </label>
+            <input
+              type="text"
+              id="latitud"
+              value={latitud}
+              onChange={e => setLatitud(e.target.value)}
+            />
+          </div>
+          <div>
+            <label htmlFor="longitud">Longitud: </label>
+            <input
+              type="text"
+              id="longitud"
+              value={longitud}
+              onChange={e => setLongitud(e.target.value)}
+            />
+          </div>
+          <div>
+            <label htmlFor="cantidadDormitorios">Cantidad de Dormitorios: </label>
+            <input
+              type="number"
+              id="cantidadDormitorios"
+              value={cantidadDormitorios}
+              onChange={e => setCantidadDormitorios(e.target.value)}
+            />
+          </div>
+          <div>
+            <label htmlFor="cantidadBanios">Cantidad de Baños: </label>
+            <input
+              type="number"
+              id="cantidadBanios"
+              value={cantidadBanios}
+              onChange={e => setCantidadBanios(e.target.value)}
+            />
+          </div>
+          <div>
+            <label htmlFor="estado">Estado: </label>
+            <input
+              type="text"
+              id="estado"
+              value={estado}
+              onChange={e => setEstado(e.target.value)}
+            />
+          </div>
+          <div>
+            <label htmlFor="tipoAlojamiento">id tipo de Alojamiento: </label>
+            <select
+              id="tipoAlojamiento"
+              value={tipoAlojamiento}
+              onChange={e => setTipoAlojamiento(e.target.value)}>
+              <option value="">Selecciona un tipo de alojamiento</option>
+              {tiposAlojamiento.map((tipoAlojamiento, index) => (
+                <option key={index} value={tipoAlojamiento.idTipoAlojamiento}>
+                  {tipoAlojamiento.idTipoAlojamiento}
+                </option>
+              ))}
+            </select>
+          </div>
+          <button type="submit">enviar</button>
+        </form>
+      </div>
+      <div className={`seccion ${mostrarSeccion === 'tipo_alojamiento' ? 'mostrar' : 'ocultar'}`}>
+        {/* tipo de alojamiento */}
+        <form onSubmit={enviar}>
+          <div>
+            <label htmlFor="descripcionAlojamiento">ingrese tipo de alojamiento: </label>
+            <input
+              type="text"
+              id="descripcionAlojamiento"
+              value={descripcion2}
+              onChange={e => setDescripcion2(e.target.value)}
+            />
+          </div>
+          <button type="submit">enviar</button>
+        </form>
+      </div>
+      <div className={`seccion ${mostrarSeccion === 'descripcion_servicio' ? 'mostrar' : 'ocultar'}`}>
+        { /* servicios */}
+        <form onSubmit={enviarNuevoServicio}>
+          <div>
+            <label htmlFor="descripcionServicio">Descripción del Servicio: </label>
+            <input
+              type="text"
+              id="descripcionServicio"
+              value={descripcion1}
+              onChange={e => setDescripcion1(e.target.value)}
+            />
+          </div>
+          <button type="submit">Agregar Servicio</button>
+        </form>
+      </div>
+      
+      <div className={`seccion ${mostrarSeccion === 'alojamiento_servicio' ? 'mostrar' : 'ocultar'}`}>
+        {/* alojamiento servicios */}
+        <form onSubmit={(e) => enviarNuevoAlojamientoServicio(e, parseInt(idAlojamiento), parseInt(idServicio))}>
+          <select value={idAlojamiento} onChange={(e) => setIdAlojamiento(e.target.value)}>
+            <option value="">Selecciona un alojamiento</option>
+            {alojamientos.map((alojamiento, index) => (
+              <option key={index} value={alojamiento.id}>
+                {alojamiento.idAlojamiento} {alojamiento.Titulo}
+              </option>
+            ))}
+          </select>
+          <select value={idServicio} onChange={(e) => setIdServicio(e.target.value)}>
+            <option value="">Selecciona un servicio</option>
+            {servicios.map((servicio) => (
+              <option key={servicio.idServicio} value={servicio.id}>
+                {servicio.idServicio} {servicio.Nombre}
+              </option>
+            ))}
+          </select>
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+      
+      <div className={`seccion ${mostrarSeccion === 'imagenes' ? 'mostrar' : 'ocultar'}`}>
+            {/* imagenes */}
+        <form onSubmit={(e) => enviarNuevaImagen(e)}>
+          <div>
+            <label htmlFor="imagen">Imagen: </label>
+            <input
+              type="text"
+              id="imagen"
+              value={imagen}
+              onChange={e => setImagen(e.target.value)}
+            />
+          </div>
+          <div>
+            <label htmlFor="idAlojamiento">ID de Alojamiento: </label>
+            <select id="idAlojamiento" value={idAlojamiento1} onChange={e => setIdAlojamiento1(e.target.value)}>
+              <option value="">Selecciona un alojamiento</option>
+              {alojamientos.map((alojamiento, index) => (
+                <option key={index} value={alojamiento.idAlojamiento}>
+                  {alojamiento.idAlojamiento} - {alojamiento.Titulo}
+                </option>
+              ))}
+            </select>
+          </div>
+          <button type="submit">Agregar imagen</button>
+        </form>
+      </div>
+      
       {/*------------- */}
       {/* alojamiento */}
-      <h2>Lista de Alojamientos</h2>
+
       <ul>
         {alojamientos.map((alojamiento, index) => {
           return (
@@ -701,36 +730,36 @@ const AddAlojamiento = () => {
                     value={estadoEditando}
                     onChange={e => setEstadoEditando(e.target.value)}
                   />
-                 
-                 <input
-      type="text"
-      value={latitudEditando}
-      onChange={e => setLatitudEditando(e.target.value)}
-    />
-    <input
-      type="text"
-      value={longitudEditando}
-      onChange={e => setLongitudEditando(e.target.value)}
-    />
-                  
-                   <label htmlFor="tipoAlojamiento">Tipo de Alojamiento: </label>
-  <select
-    id="tipoAlojamiento"
-    value={idTipoAlojamientoEditando}
-    onChange={e => setIdTipoAlojamientoEditando(e.target.value)}
-  >
-    <option value="">Selecciona un tipo de alojamiento</option>
-    {tiposAlojamiento.map((tipoAlojamiento, index) => (
-      <option key={index} value={tipoAlojamiento.idTipoAlojamiento}>
-        {tipoAlojamiento.idTipoAlojamiento}
-      </option>
-    ))}
-  </select>
+
+                  <input
+                    type="text"
+                    value={latitudEditando}
+                    onChange={e => setLatitudEditando(e.target.value)}
+                  />
+                  <input
+                    type="text"
+                    value={longitudEditando}
+                    onChange={e => setLongitudEditando(e.target.value)}
+                  />
+
+                  <label htmlFor="tipoAlojamiento">Tipo de Alojamiento: </label>
+                  <select
+                    id="tipoAlojamiento"
+                    value={idTipoAlojamientoEditando}
+                    onChange={e => setIdTipoAlojamientoEditando(e.target.value)}
+                  >
+                    <option value="">Selecciona un tipo de alojamiento</option>
+                    {tiposAlojamiento.map((tipoAlojamiento, index) => (
+                      <option key={index} value={tipoAlojamiento.idTipoAlojamiento}>
+                        {tipoAlojamiento.idTipoAlojamiento}
+                      </option>
+                    ))}
+                  </select>
                   <button onClick={confirmarEdicion1}>Confirmar</button>
                 </>
               ) : (
                 <>
-                  {alojamiento.Titulo}, {alojamiento.PrecioPorDia}, {alojamiento.Descripcion} ,{alojamiento.Latitud}, {alojamiento.Longitud},  
+                  {alojamiento.Titulo}, {alojamiento.PrecioPorDia}, {alojamiento.Descripcion} ,{alojamiento.Latitud}, {alojamiento.Longitud},
                   {alojamiento.CantidadDormitorios} ,{alojamiento.CantidadBanios} ,{alojamiento.Estado} ,{alojamiento.idTipoAlojamiento}
                   <button onClick={() => iniciarEdicion1(alojamiento)}>Editar</button>
                   <button onClick={() => eliminarAlojamientoPorId(alojamiento.idAlojamiento)}>Eliminar</button>
@@ -740,7 +769,9 @@ const AddAlojamiento = () => {
           );
         })}
       </ul>
-      {/* tipos de alojamiento */}
+      {/* LISTA ALOJAMIENTOS*/}
+      <div className={`seccion ${mostrarSeccion === 'lista_alojamientos' ? 'mostrar' : 'ocultar'}`}>
+      <h1>Lista de Alojamientos</h1>
       <h2>Lista de Tipos de Alojamiento</h2>
       <ul>
         {tiposAlojamiento.map((tipo, index) => {
@@ -837,43 +868,44 @@ const AddAlojamiento = () => {
       {/* imagenes */}
       <h2>imagenes</h2>
       <div>
-  {imagenes.map((imagen, index) => (
-    <div key={index}>
-      <img src={imagen.RutaArchivo} alt={`ruta Imagen ${imagen.RutaArchivo} id alojamiento ${imagen.idAlojamiento}`} />
-      {imagenEditando === imagen.idImagen ? (
-        <div>
-          <input
-            type="text"
-            value={rutaArchivoEditando}
-            onChange={e => setRutaArchivoEditando(e.target.value)}
-            placeholder="Ruta del archivo"
-          />
-          <select
-            value={idAlojamientoEditando}
-            onChange={e => setIdAlojamientoEditando(e.target.value)}
-            placeholder="ID de alojamiento"
-          >
-            <option value="">Selecciona un alojamiento</option>
-            {alojamientos.map((alojamiento, index) => (
-              <option key={index} value={alojamiento.idAlojamiento}>
-                {alojamiento.idAlojamiento} - {alojamiento.Titulo}
-              </option>
-            ))}
-          </select>
-          <button onClick={confirmarEdicionImagen}>Confirmar Edición</button>
-        </div>
-      ) : (
-        <button onClick={() => iniciarEdicionImagen(imagen)}>Editar</button>
-      )}
-      <button onClick={() => eliminarImagen(imagen.idImagen)}>Eliminar</button>
-    </div>
-  ))}
+        {imagenes.map((imagen, index) => (
+          <div key={index}>
+            <img src={imagen.RutaArchivo} alt={`ruta Imagen ${imagen.RutaArchivo} id alojamiento ${imagen.idAlojamiento}`} />
+            {imagenEditando === imagen.idImagen ? (
+              <div>
+                <input
+                  type="text"
+                  value={rutaArchivoEditando}
+                  onChange={e => setRutaArchivoEditando(e.target.value)}
+                  placeholder="Ruta del archivo"
+                />
+                <select
+                  value={idAlojamientoEditando}
+                  onChange={e => setIdAlojamientoEditando(e.target.value)}
+                  placeholder="ID de alojamiento"
+                >
+                  <option value="">Selecciona un alojamiento</option>
+                  {alojamientos.map((alojamiento, index) => (
+                    <option key={index} value={alojamiento.idAlojamiento}>
+                      {alojamiento.idAlojamiento} - {alojamiento.Titulo}
+                    </option>
+                  ))}
+                </select>
+                <button onClick={confirmarEdicionImagen}>Confirmar Edición</button>
+              </div>
+            ) : (
+              <button onClick={() => iniciarEdicionImagen(imagen)}>Editar</button>
+            )}
+            <button onClick={() => eliminarImagen(imagen.idImagen)}>Eliminar</button>
+          </div>
+        ))}
       </div>
-
+      </div>
     </div>
-      );
-      
+    </>
+    
+  );
+
 };
 
 export default AddAlojamiento;
- 
