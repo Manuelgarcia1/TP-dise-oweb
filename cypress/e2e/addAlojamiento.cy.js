@@ -43,7 +43,7 @@ describe('Agregar Alojamiento', () => {
       cy.get('#boton-enviar').click();
 
       cy.wait(2000);
-      for (let i = 0; i < 20; i++) {
+      for (let i = 0; i < 8; i++) {
         cy.get('#boton-nav1').click();
 
     
