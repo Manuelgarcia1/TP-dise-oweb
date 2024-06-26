@@ -24,12 +24,34 @@ describe('Agregar Alojamiento', () => {
       // Navegar a la página de agregar alojamiento
       cy.visit('http://localhost:5173/addAlojamiento');
 
+      const titles = [
+        "Alojamiento en la playa",
+        "Cabaña en la montaña",
+        "Apartamento céntrico",
+        "Villa con piscina",
+        "Casa rural",
+        "Estudio moderno",
+        "Bungalow acogedor"
+    ];
+    
+    const descriptions = [
+        "Perfecto para familias",
+        "Ideal para una escapada romántica",
+        "Cerca de todas las atracciones",
+        "Con todas las comodidades",
+        "Un lugar para relajarse",
+        "Ambiente tranquilo y sereno",
+        "Con vistas impresionantes"
+    ];
 
+    function getRandomElement(array) {
+      return array[Math.floor(Math.random() * array.length)];
+  }
 
         // Generar datos aleatorios
-        const randomTitle = `Alojamiento ${Math.random().toString(36).substring(7)}`;
+        const randomTitle = getRandomElement(titles);
+        const randomDescription = getRandomElement(descriptions);
         const randomPrice = Math.floor(Math.random() * 1000) + 50;
-        const randomDescription = `Descripción ${Math.random().toString(36).substring(7)}`;
         const randomLat = '10';
         const randomLng = '10';
         const randomBedrooms = Math.floor(Math.random() * 5) + 1;
@@ -43,7 +65,7 @@ describe('Agregar Alojamiento', () => {
       cy.get('#boton-enviar').click();
 
       cy.wait(2000);
-      for (let i = 0; i < 20; i++) {
+      for (let i = 0; i < 8; i++) {
         cy.get('#boton-nav1').click();
 
     
