@@ -131,7 +131,6 @@ const Promociones = () => {
             });
 
           return (
-            // <Link key={alojamiento.idAlojamiento} to={`/detalleAlojamiento/${alojamiento.idAlojamiento}`} style={{ textDecoration: 'none', color: 'inherit' }}>
             <div className="card1" key={index}>
               {alojamientoImagenes.map((imagen, imgIndex) => (
                 <img key={imgIndex} src={imagen.RutaArchivo} alt={`Imagen de ${alojamiento.Titulo}`} />
@@ -161,7 +160,6 @@ const Promociones = () => {
                 <span className="texto-precio">/noche</span>
               </div>
             </div>
-            // </Link>
           );
         })}
       </div>
