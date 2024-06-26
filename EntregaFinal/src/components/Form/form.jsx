@@ -4,8 +4,6 @@ import './form.css';
 const AddAlojamiento = () => {
 
   const [mostrarSeccion, setMostrarSeccion] = useState('');
-
-
   const [titulo, setTitulo] = useState('');
   const [descripcion, setDescripcion] = useState('');
   const [tiposAlojamiento, setTiposAlojamiento] = useState([]);
@@ -306,7 +304,6 @@ const AddAlojamiento = () => {
   //alojamiento
   const enviarNuevoAlojamiento = async (event) => {
     event.preventDefault();
-    const idAlojamiento = Math.floor(Math.random() * 1000000);
 
     try {
       const response = await fetch('http://localhost:3000/alojamiento/createAlojamiento', {
@@ -450,6 +447,10 @@ const AddAlojamiento = () => {
       alert('error al establecer el servicio.');
     }
   };
+  
+
+  const alojamientosOrdenados = [...alojamientos].reverse();
+
   const eliminarAlojamiento = async (id) => {
     try {
       const response = await fetch(`http://localhost:3000/tiposAlojamiento/deleteTipoAlojamiento/${id}`, {
@@ -510,9 +511,9 @@ const AddAlojamiento = () => {
     <div className='div-botones'>
         <button className='boton-nav' id='boton-nav1' onClick={() => mostrarSeccionHandler('agregar_alojamiento')} >Agregar Alojamiento</button>
         <button className='boton-nav' id='boton-nav2' onClick={() => mostrarSeccionHandler('tipo_alojamiento')}>Tipo de Alojamiento</button>
-        <button className='boton-nav' onClick={() => mostrarSeccionHandler('descripcion_servicio')}>Descripción del Servicio</button>
+        <button className='boton-nav'  onClick={() => mostrarSeccionHandler('descripcion_servicio')}>Descripción del Servicio</button>
         <button className='boton-nav' onClick={() => mostrarSeccionHandler('alojamiento_servicio')}>Alojamiento Servicio</button>
-        <button className='boton-nav' onClick={() => mostrarSeccionHandler('imagenes')}>Imágenes</button>
+        <button className='boton-nav' id='boton-nav3'   onClick={() => mostrarSeccionHandler('imagenes')}>Imágenes</button>
         <button className='boton-nav' onClick={() => mostrarSeccionHandler('lista_alojamientos')}>Lista de Alojamientos</button>
     </div>
     <div className="contenedorAddAlojamientos">
@@ -680,14 +681,14 @@ const AddAlojamiento = () => {
             <label htmlFor="idAlojamiento">ID de Alojamiento: </label>
             <select id="idAlojamiento" value={idAlojamiento1} onChange={e => setIdAlojamiento1(e.target.value)}>
               <option value="">Selecciona un alojamiento</option>
-              {alojamientos.map((alojamiento, index) => (
+              {alojamientosOrdenados.map((alojamiento, index) => (
                 <option key={index} value={alojamiento.idAlojamiento}>
                   {alojamiento.idAlojamiento} - {alojamiento.Titulo}
                 </option>
               ))}
             </select>
           </div>
-          <button type="submit">Agregar imagen</button>
+          <button type="submit" id="agregar-imagen">Agregar imagen</button>
         </form>
       </div>
       
