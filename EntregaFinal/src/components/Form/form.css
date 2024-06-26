@@ -78,16 +78,6 @@
   cursor:pointer;
 }
 
-.boton-nav1 {
-  background-color: #007bff;
-  color: #f5f5f5;
-  padding: 1%;
-  margin: 1%;
-  border-radius: 7%;
-  border: none;
-  cursor:pointer;
-}
-
 .lista_alojamientos {
   display: flex;
   justify-content: center;
@@ -103,11 +93,6 @@
   }
 
   .boton-nav {
-    width: 100%; /* Ajusta los botones para que tomen el 100% del ancho */
-    margin: 5px 0; /* Ajusta el margen para separar los botones verticalmente */
-  }
-
-  .boton-nav1 {
     width: 100%; /* Ajusta los botones para que tomen el 100% del ancho */
     margin: 5px 0; /* Ajusta el margen para separar los botones verticalmente */
   }

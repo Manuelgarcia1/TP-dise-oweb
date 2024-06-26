@@ -1,19 +1,25 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './contacto.css';
 
 const FormularioContacto = () => {
   const [nombre, setNombre] = useState('');
   const [email, setEmail] = useState('');
   const [telefono, setTelefono] = useState('');
-  const [website, setWebsite] = useState('');
   const [asunto, setAsunto] = useState('');
   const [mensaje, setMensaje] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert('Su mensaje fue enviado, nos comunicaremos a la brevedad');
+  
+    const formData = {
+      nombre,
+      email,
+      telefono,
+      asunto,
+      mensaje,
+    };
+    alert(`Datos del formulario:\n${JSON.stringify(formData, null, 2)}`);
   };
-
   return (
     <div className="contact_form">
       <h2 className="title-contacto">Contacto</h2>
