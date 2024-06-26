@@ -120,9 +120,9 @@ Instalación de Cypress:
 
 Primero, asegúrate de tener Node.js y npm instalados. Luego, instala Cypress en tu proyecto:
 
-npm install cypress --save-dev
+```npm install cypress --save-dev```
 Configuración de Cypress:
 
 Abre Cypress:
-npx cypress open
+```npx cypress open```
 Esto abrirá la interfaz de Cypress donde debe elegir la opcion de e2e integration, se puede ejecutar la prueba en la carpeta cypress/integration el archivo 'addAlojamiento.spec.js'
