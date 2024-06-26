@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background-color: #ebebeb;
+  min-height: 100vh;
+}
+
+.contenedor-datos {
+  background-color: #e9f3f6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  max-width: 800px;
+  margin: 20px auto;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.datos-mensaje {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 15px;
+}
+
+.datos-mensaje h2 {
+  margin: 4px;
+  font-size: 24px;
+}
+
+.datos-mensaje h3 {
+  margin: 4px;
+  font-size: 18px;
+  color: #5e5e5e;
+}
+
+.datos-seleccion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.datos-calendario, .datos-persona {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 10px 0;
+  width: 100%;
+  justify-content: center;
+}
+
+.datos-calendario img, .datos-persona img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.datos-calendario h2, .datos-persona h2 {
+  font-size: 16px;
+}
+
+.datos-persona h2 {
+  margin: 0 10px;
+}
+
+.datos-button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.datos-button button {
+  font-size: 16px;
+  background-color: #65aef2;
+  border-radius: 5px;
+  padding: 12px 20px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 600;
+  width: 100%;
+}
+
+@media (min-width: 827px) {
+  .contenedor-datos {
+    width: 80%;
+    height: auto;
+    padding: 30px;
+  }
+
+  .datos-seleccion {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .datos-calendario, .datos-persona {
+    width: auto;
+    padding: 10px 40px;
+  }
+
+  .datos-calendario img, .datos-persona img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .datos-calendario h2, .datos-persona h2 {
+    font-size: 14px;
+  }
+
+  .datos-button {
+    width: auto;
+  }
+
+  .datos-button button {
+    width: auto;
+    padding: 10px 20px;
+  }
+}
+
+@media (min-width: 1224px) {
+  .contenedor-datos {
+    width: 60%;
+    padding: 20px;
+  }
+
+  .datos-mensaje h2 {
+    font-size: 28px;
+  }
+
+  .datos-mensaje h3 {
+    font-size: 20px;
+  }
+
+  .datos-calendario img, .datos-persona img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .datos-calendario h2, .datos-persona h2 {
+    font-size: 16px;
+  }
+
+  .datos-button button {
+    font-size: 18px;
+    padding: 14px 24px;
+  }
+}

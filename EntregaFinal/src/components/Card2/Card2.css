@@ -1,0 +1,151 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+body{
+  background-color: #ebebeb;
+  min-height: none;
+}
+
+.texto{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    width: 80%;
+    padding-bottom: 20px;
+  }
+  
+  .texto h2{
+    color: #65AEF2;
+    font-weight: bold;
+  }
+  
+  .texto h3{
+    font-weight: 800;
+    margin: 20px 0
+  }
+  
+  .button-card{
+    border: none;
+    background: none;
+    font-family:"Inter", sans-serif; 
+    color: #65AEF2;
+    cursor: pointer;
+  }
+  
+  
+  .cards{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .buscadores {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width: 80%;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.buscadores select, .buscadores input, .buscadores button {
+    margin: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.buscadores button {
+    background-color: #65AEF2;
+    color: #fff;
+    cursor: pointer;
+}
+  .card1{
+    overflow: auto;
+    background-color: #ffff;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    width: 295px;
+  }
+  
+  .card1 img{
+    width: 295px;
+    height: 220px;
+    margin: 0 auto;
+  }
+  
+  .card1 h2{
+    padding-top: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #5E5E5E;
+  }
+  .tipo-alojamiento{
+    color: #007bff;;
+  }
+  
+  .container-description{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .disponibilidad{
+    font-weight: 500;
+  }
+
+  .container-description-row{
+    flex-direction: row;
+    gap: 15px;
+  }
+  
+  .card-precio{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font-family:"Inter", sans-serif; 
+    color: #007bff;;
+  }
+  .grid-servicios {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .grid-servicios li {
+    list-style-type: none;
+  }
+  .card-precio .precio{
+    font-weight: 800;
+    font-size: 25px;
+    
+  }
+  .card1 ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .card1 ul li {
+    margin-right: auto;
+  margin-left: auto;
+  }

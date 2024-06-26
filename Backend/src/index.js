@@ -16,12 +16,23 @@ app.use(cors({
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-// Rutas
+
+
+// Rutas existentes
 const routerAlojamiento = require('./routes/alojamientos');
 const routerTiposAlojamiento = require('./routes/tiposAlojamiento');
+const routerAlojamientosServicios = require('./routes/alojamientosServicios');
+const routerServicio = require('./routes/servicios');
+const routerImagen = require('./routes/imagenes');
+const routerUsuario = require('./routes/usuario'); // Nueva línea
 
 app.use('/alojamiento', routerAlojamiento);
 app.use('/tiposAlojamiento', routerTiposAlojamiento);
+app.use('/alojamientosServicios', routerAlojamientosServicios);
+app.use('/servicio', routerServicio);
+app.use('/imagen', routerImagen);
+app.use('/usuario', routerUsuario); // Nueva línea
+
 
 app.use(express.static(join(__dirname, 'public')));
 
